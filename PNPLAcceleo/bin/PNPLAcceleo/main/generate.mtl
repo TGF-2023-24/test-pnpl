@@ -1,0 +1,59 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.petrinets.org/pnplmetamodel')]
+
+[template public generate(apnpl : pnpl)]
+[comment @main/]
+[file ('datos.json', false, 'UTF-8')]
+{
+	"PetriNet": {
+		"places":['['/]
+			[for (element: Element | apnpl.pn_150.elements) separator (',')]
+				{
+					"name": "[element.name/]",
+					[if (element.name.equalsIgnoreCase('invalid'))]
+					id_PC": ""
+					[else]
+					"id_PC": "[element.presenceCondition.id/]"
+					[/if]
+				}
+			[/for]
+
+		[']'/]
+		},
+	"FeatureModel": {
+		"Nodes": [ '[' /] 
+			[for (nodo: Node | apnpl.featuremodel.nodes) separator(',')]
+				{
+					"name": "[nodo.name/]",
+					"abstract": "[nodo.abstract/]",
+					"mandatory": "[nodo.mandatory/]",
+					"requires": "[nodo.requires.name/]",
+					"excludes": "[nodo.exclude.name/]"
+			
+				}
+			[/for]
+		[ ']' /],
+		"Relations": [ '[' /]
+			[for (relacion: Relation | apnpl.featuremodel.relations) separator(',')]
+				{
+					"parent": "[relacion.parent.name/]",
+					"type": "[relacion.type/]",
+					"childs": ['['/]
+						[for (hijo: Node | relacion.childs) separator(',')]
+							"[hijo.name/]"
+						[/for]
+					[']'/]
+				}
+			[/for]
+		[ ']' /]
+	},
+	"PresenceConditions": [ '[' /] 
+		[for (pc: PresenceCondition | apnpl.presenceconditions) separator(',')]
+			{
+				"id": "[pc.id/]"
+			}
+		[/for]
+	[ ']' /]
+}
+[/file]
+[/template]

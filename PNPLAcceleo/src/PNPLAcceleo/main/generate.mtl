@@ -25,8 +25,8 @@
 			[for (nodo: Node | apnpl.featuremodel.nodes) separator(',')]
 				{
 					"name": "[nodo.name/]",
-					"abstract": "[nodo.abstract/]",
-					"mandatory": "[nodo.mandatory/]",
+					"abstract": [nodo.abstract/],
+					"mandatory": [nodo.mandatory/],
 					"requires": "[nodo.requires.name/]",
 					"excludes": "[nodo.exclude.name/]"
 			
@@ -38,7 +38,7 @@
 				{
 					"parent": "[relacion.parent.name/]",
 					"type": "[relacion.type/]",
-					"childs": ['['/]
+					"children": ['['/]
 						[for (hijo: Node | relacion.childs) separator(',')]
 							"[hijo.name/]"
 						[/for]

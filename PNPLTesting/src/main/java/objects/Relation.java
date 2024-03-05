@@ -4,6 +4,7 @@ package objects;
 import org.graphwalker.core.model.Edge;
 import utils.Type;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Relation extends Edge {
@@ -24,6 +25,7 @@ public class Relation extends Edge {
 
         public RelationBuilder(String parent) {
             parentNode = parent;
+            children = new ArrayList<>();
         }
         public RelationBuilder type(Type type) {
             this.type = type;

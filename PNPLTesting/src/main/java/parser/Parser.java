@@ -8,6 +8,7 @@ import org.graphwalker.core.model.Edge;
 import org.graphwalker.core.model.Vertex;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import utils.Literal;
 import utils.Type;
 
 import java.util.ArrayList;
@@ -40,12 +41,12 @@ public class Parser {
         List<Node> list = new ArrayList<>();
         for (Object obj : nodes) {
             JSONObject node = (JSONObject) obj;
-
+            String[] aux = node.get("requires").toString().split("(?=[A-Z])");
             Node n = new Node.NodeBuilder((String)node.get("name"))
                     .isAbstract((boolean) node.get("abstract"))
                     .isMandatory((boolean) node.get("mandatory"))
-                    .requirments(Arrays.stream(node.get("requires").toString().split("(?=[A-Z][^A-Z])\n")).toList())
-                    .excludes(Arrays.stream(node.get("excludes").toString().split("(?=[A-Z][^A-Z])\n")).toList())
+                    .requirments(Arrays.stream(node.get("requires").toString().split("(?=[A-Z])")).toList())
+                    .excludes(Arrays.stream(node.get("excludes").toString().split("(?=[A-Z])")).toList())
                     .build();
             list.add(n);
         }
@@ -80,6 +81,7 @@ public class Parser {
         List<String> list = new ArrayList<>();
         HashSet<String> added_nodes = new HashSet<>();
         for (String word : words) {
+            if (word.equals(Literal.VALOR_VACIO)) continue;
             for (Node node : existingNodes) {
                 if (node.getName().contains(word) && !added_nodes.contains(node.getName())) {
                     list.add(node.getName());

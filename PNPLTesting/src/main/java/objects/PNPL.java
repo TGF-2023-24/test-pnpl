@@ -7,36 +7,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PNPL {
-    private List<Vertex> nodes;
-    private List<Edge> relations;
+    private List<Node> nodes;
+    private List<Relation> relations;
     List<String> presenceConditionList;
     List<Place> places;
-    private PNPL(List<Vertex> nodes, List<Edge> relations, List<String> pcList, List<Place> places) {
+    private PNPL(List<Node> nodes, List<Relation> relations, List<String> pcList, List<Place> places) {
         this.nodes = nodes;
         this.relations = relations;
         this.presenceConditionList = pcList;
         this.places = places;
     }
 
-    public List<Vertex> getNodes() {
+    public List<Node> getNodes() {
         return nodes;
     }
 
-    public List<Edge> getRelations() {
+    public List<Relation> getRelations() {
         return relations;
     }
 
     public static class PNPLBuilder {
-        private List<Vertex> nodes;
-        private List<Edge> relations;
+        private List<Node> nodes;
+        private List<Relation> relations;
         List<String> presenceConditionList;
         List<Place> places;
-        public PNPLBuilder nodes(List<Vertex> nodes) {
+        public PNPLBuilder nodes(List<Node> nodes) {
             if (nodes == null) nodes = new ArrayList<>();
             this.nodes = nodes;
             return this;
         }
-        public PNPLBuilder relations(List<Edge> relations) {
+        public PNPLBuilder relations(List<Relation> relations) {
             if (relations == null) relations = new ArrayList<>();
             this.relations = relations;
             return this;

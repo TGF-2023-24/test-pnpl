@@ -12,6 +12,7 @@ import utils.Type;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 public class Parser {
@@ -26,7 +27,6 @@ public class Parser {
         JSONArray relations = (JSONArray) FM.get("Relations");
 
         JSONArray places = (JSONArray) PetriNet.get("places");
-
         return pnplBuild.nodes(parseNodes(nodes))
                 .relations(parseRelations(relations))
                 .presenceCondition(parsePresenceCondition(presenceConditions))
@@ -36,32 +36,57 @@ public class Parser {
 
     }
 
-    private static List<Vertex> parseNodes(JSONArray nodes) {
-        List<Vertex> list = new ArrayList<>();
+    private static List<Node> parseNodes(JSONArray nodes) {
+        List<Node> list = new ArrayList<>();
         for (Object obj : nodes) {
             JSONObject node = (JSONObject) obj;
 
-            Vertex v = new Node.NodeBuilder((String)node.get("name"))
+            Node n = new Node.NodeBuilder((String)node.get("name"))
                     .isAbstract((boolean) node.get("abstract"))
                     .isMandatory((boolean) node.get("mandatory"))
-                    .requirments(Arrays.stream(node.get("requires").toString().split(",")).toList())
-                    .excludes(Arrays.stream(node.get("excludes").toString().split(",")).toList())
+                    .requirments(Arrays.stream(node.get("requires").toString().split("(?=[A-Z][^A-Z])\n")).toList())
+                    .excludes(Arrays.stream(node.get("excludes").toString().split("(?=[A-Z][^A-Z])\n")).toList())
                     .build();
-            list.add(v);
+            list.add(n);
+        }
+        for (Node nodo : list) {
+            nodo.setNodeRequirements(parseRequirements(nodo.getNodeRequirements(), list));
+            nodo.setExcludes(parseRequirements(nodo.getExcludes(), list));
         }
         return list;
     }
 
-    private static List<Edge> parseRelations(JSONArray relations) {
-        List<Edge> list = new ArrayList<>();
+    private static List<Relation> parseRelations(JSONArray relations) {
+        List<Relation> list = new ArrayList<>();
         for (Object obj : relations) {
             JSONObject relation = (JSONObject) obj;
-
-            Edge v = new Relation.RelationBuilder(relation.get("parent").toString())
-                    //TODO duda con children
+            Relation r = new Relation.RelationBuilder(relation.get("parent").toString())
+                    .children(parseChildren((JSONArray) relation.get("children")))
                     .type(parseType(relation.get("type").toString()))
                     .build();
-            list.add(v);
+            list.add(r);
+        }
+        return list;
+    }
+
+    private static List<String> parseChildren(JSONArray children) {
+        List<String> list = new ArrayList<>();
+        for (Object obj : children)
+            list.add(obj.toString());
+        return list;
+    }
+
+    private static List<String> parseRequirements(List<String> words, List<Node> existingNodes) {
+        List<String> list = new ArrayList<>();
+        HashSet<String> added_nodes = new HashSet<>();
+        for (String word : words) {
+            for (Node node : existingNodes) {
+                if (node.getName().contains(word) && !added_nodes.contains(node.getName())) {
+                    list.add(node.getName());
+                    added_nodes.add(node.getName());
+                }
+
+            }
         }
         return list;
     }

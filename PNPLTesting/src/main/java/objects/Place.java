@@ -8,6 +8,9 @@ public class Place {
         this.pc = pc;
     }
 
+    public String getName() { return name; }
+    public String getPresenceCondition() { return pc; }
+
     public static class PlaceBuilder {
         private String name, pc;
 

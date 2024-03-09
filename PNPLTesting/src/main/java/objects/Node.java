@@ -6,18 +6,20 @@ import org.graphwalker.core.model.Vertex;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Node extends Vertex {
+public class Node {
+    private Vertex _vertex;
     private String _name;
     private boolean _isAbstract, _isMandatory;
     private List<String> _nodeRequirements, _excludes;
 
-    private Node(String name, boolean isAbs, boolean isMand, List<String> req, List<String> exc) {
+    private Node(String name, boolean isAbs, boolean isMand, List<String> req, List<String> exc, Vertex vertex) {
         super();
         _name = name;
         _isAbstract = isAbs;
         _isMandatory = isMand;
         _nodeRequirements = req != null ? req : new ArrayList<>();
         _excludes = exc != null ? exc : new ArrayList<>();
+        _vertex = vertex;
     }
 
     public String getName() {
@@ -85,9 +87,9 @@ public class Node extends Vertex {
             return this;
         }
 
-        public Vertex build() {
-            Vertex v = new Node(_name, _isAbstract, _isMandatory, _nodeRequirements, _excludes);
-            return v;
+        public Node build() {
+            Node n = new Node(_name, _isAbstract, _isMandatory, _nodeRequirements, _excludes, new Vertex());
+            return n;
         }
     }
 }

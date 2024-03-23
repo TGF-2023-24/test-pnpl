@@ -5,6 +5,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import parser.Parser;
 import utils.Literal;
+import utils.Utils;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,10 +19,9 @@ public class ControllerImp extends Controller {
         try {
             JSONObject jsonObject = (JSONObject) Jsonparser.parse(new FileReader(jsonPath));
             PNPL pnpl = Parser.parse(jsonObject);
-            System.out.println(pnpl.getNodes());
         } catch (IOException | ParseException e) {
-            System.err.println(e.getMessage());
-            System.err.println(Literal.FORMATO_INVALIDO);
+            Utils.LoggerError().error(e.getMessage());
+            Utils.LoggerError().error(Literal.FORMATO_INVALIDO);
         }
     }
 }

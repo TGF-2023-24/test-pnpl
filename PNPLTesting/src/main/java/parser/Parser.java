@@ -10,6 +10,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import utils.Literal;
 import utils.Type;
+import utils.Utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,6 +20,7 @@ import java.util.List;
 public class Parser {
 
     public static PNPL parse(JSONObject json) {
+        Utils.LoggerSeguimiento().trace("Parseando");
         PNPL.PNPLBuilder pnplBuild = new PNPL.PNPLBuilder();
         JSONObject PetriNet = (JSONObject) json.get("PetriNet");
         JSONObject FM = (JSONObject) json.get("FeatureModel");
@@ -28,6 +30,7 @@ public class Parser {
         JSONArray relations = (JSONArray) FM.get("Relations");
 
         JSONArray places = (JSONArray) PetriNet.get("places");
+
         return pnplBuild.nodes(parseNodes(nodes))
                 .relations(parseRelations(relations))
                 .presenceCondition(parsePresenceCondition(presenceConditions))
@@ -39,38 +42,50 @@ public class Parser {
 
     private static List<Node> parseNodes(JSONArray nodes) {
         List<Node> list = new ArrayList<>();
-        for (Object obj : nodes) {
-            JSONObject node = (JSONObject) obj;
-            String[] aux = node.get("requires").toString().split("(?=[A-Z])");
-            Node n = new Node.NodeBuilder((String)node.get("name"))
-                    .isAbstract((boolean) node.get("abstract"))
-                    .isMandatory((boolean) node.get("mandatory"))
-                    .requirments(Arrays.stream(node.get("requires").toString().split("(?=[A-Z])")).toList())
-                    .excludes(Arrays.stream(node.get("excludes").toString().split("(?=[A-Z])")).toList())
-                    .build();
-            list.add(n);
+        Utils.LoggerSeguimiento().debug("Parseando nodos...");
+        try {
+            for (Object obj : nodes) {
+                JSONObject node = (JSONObject) obj;
+                Node n = new Node.NodeBuilder((String)node.get("name"))
+                .isAbstract((boolean) node.get("abstract"))
+                .isMandatory((boolean) node.get("mandatory"))
+                .requirments(Arrays.stream(node.get("requires").toString().split("(?=[A-Z])")).toList())
+                .excludes(Arrays.stream(node.get("excludes").toString().split("(?=[A-Z])")).toList())
+                .build();
+                list.add(n);
+            }
+            for (Node nodo : list) {
+                nodo.setNodeRequirements(parseRequirements(nodo.getNodeRequirements(), list));
+                nodo.setExcludes(parseRequirements(nodo.getExcludes(), list));
+                Utils.LoggerSeguimiento().debug("Nodo " + list.indexOf(nodo)+": ", nodo.toString());
+            }
+        } catch(Exception e) {
+            Utils.LoggerError().error("Error al parsear los nodos: " + e.getMessage());
         }
-        for (Node nodo : list) {
-            nodo.setNodeRequirements(parseRequirements(nodo.getNodeRequirements(), list));
-            nodo.setExcludes(parseRequirements(nodo.getExcludes(), list));
+            return list;
         }
-        return list;
-    }
-
+        
     private static List<Relation> parseRelations(JSONArray relations) {
         List<Relation> list = new ArrayList<>();
-        for (Object obj : relations) {
-            JSONObject relation = (JSONObject) obj;
-            Relation r = new Relation.RelationBuilder(relation.get("parent").toString())
-                    .children(parseChildren((JSONArray) relation.get("children")))
-                    .type(parseType(relation.get("type").toString()))
-                    .build();
-            list.add(r);
-        }
-        return list;
-    }
+        Utils.LoggerSeguimiento().debug("Parseando relaciones...");
+        try {
 
-    private static List<String> parseChildren(JSONArray children) {
+            for (Object obj : relations) {
+                JSONObject relation = (JSONObject) obj;
+                Relation relacion = new Relation.RelationBuilder(relation.get("parent").toString())
+                .children(parseChildren((JSONArray) relation.get("children")))
+                .type(parseType(relation.get("type").toString()))
+                .build();
+                list.add(relacion);
+                Utils.LoggerSeguimiento().debug("Relacion " + list.indexOf(relacion)+": ", relacion.toString());
+            }
+        } catch (Exception e) {
+            Utils.LoggerError().error("Error al parsear las relaciones: " + e.getMessage());
+        }
+            return list;
+        }
+        
+        private static List<String> parseChildren(JSONArray children) {
         List<String> list = new ArrayList<>();
         for (Object obj : children)
             list.add(obj.toString());
@@ -103,23 +118,38 @@ public class Parser {
 
     private static List<String> parsePresenceCondition(JSONArray presenceConditions) {
         List<String> list = new ArrayList<>();
-        for (Object obj : presenceConditions) {
-            JSONObject pc = (JSONObject) obj;
-            list.add(pc.get("id").toString());
+        Utils.LoggerSeguimiento().debug("Parseando PCs...");
+        try {
+            for (Object obj : presenceConditions) {
+                JSONObject pc = (JSONObject) obj;
+                String presenceCondition = pc.get("id").toString();
+                list.add(presenceCondition);
+                Utils.LoggerSeguimiento().debug("Presence Condition " + list.indexOf(presenceCondition)+": ", presenceCondition);
+            }
+        } catch(Exception e) {
+            Utils.LoggerError().error("Error al parsear las PCs: " + e.getMessage());
         }
         return list;
     }
 
     private static List<Place> parsePlaces(JSONArray places) {
         List<Place> list = new ArrayList<>();
-        for (Object obj : places) {
-            JSONObject place = (JSONObject) obj;
+        Utils.LoggerSeguimiento().debug("Parseando places...");
+        try {
 
-            Place p = new Place.PlaceBuilder(place.get("name").toString())
-                    .presenceCondition(place.get("id_PC").toString())
-                    .build();
-            list.add(p);
+            for (Object obj : places) {
+                JSONObject place = (JSONObject) obj;
+                
+                Place p = new Place.PlaceBuilder(place.get("name").toString())
+                .presenceCondition(place.get("id_PC").toString())
+                .build();
+                list.add(p);
+                Utils.LoggerSeguimiento().debug("Place " + list.indexOf(p)+": ", p.toString());
+
+            }
+        } catch(Exception e) {
+            Utils.LoggerError().error("Error al parsear los places: " + e.getMessage());
         }
-        return list;
+            return list;
     }
 }

@@ -2,10 +2,19 @@ package main;
 
 import controller.Controller;
 import utils.Literal;
+import utils.Utils;
 
 public class Main {
     public static void main(String[] args) {
-        if (args.length == 0) System.err.println(Literal.PARAMETROS_INVALIDOS);
-        else Controller.getInstance().execute(args[0]);
+        Utils.LoggerSeguimiento().trace("-----------------------");
+        Utils.LoggerSeguimiento().debug("Iniciando la aplicación");
+        
+        if (args.length == 0) Utils.LoggerError().error(Literal.PARAMETROS_INVALIDOS);
+        else {
+            String directorio_raiz = System.getProperty("user.dir") + Literal.NOMBRE_PROYECTO;
+            Controller.getInstance().execute(directorio_raiz + args[0]);
+            Utils.LoggerSeguimiento().debug("Finalizando la aplicación");
+            Utils.LoggerSeguimiento().trace("-----------------------");
+        }
     }
 }

@@ -1,0 +1,81 @@
+2024-03-23 15:49:49.735 [main] DEBUG - Iniciando la aplicación
+2024-03-23 15:49:49.745 [main] DEBUG - Parseando nodos...
+2024-03-23 15:49:49.757 [main] DEBUG - Nodo 0: 
+2024-03-23 15:49:49.757 [main] DEBUG - Nodo 1: 
+2024-03-23 15:49:49.757 [main] DEBUG - Nodo 2: 
+2024-03-23 15:49:49.757 [main] DEBUG - Nodo 3: 
+2024-03-23 15:49:49.757 [main] DEBUG - Nodo 4: 
+2024-03-23 15:49:49.757 [main] DEBUG - Nodo 5: 
+2024-03-23 15:49:49.757 [main] DEBUG - Nodo 6: 
+2024-03-23 15:49:49.757 [main] DEBUG - Nodo 7: 
+2024-03-23 15:49:49.757 [main] DEBUG - Nodo 8: 
+2024-03-23 15:49:49.757 [main] DEBUG - Parseando relaciones...
+2024-03-23 15:49:49.759 [main] DEBUG - Relacion 0: 
+2024-03-23 15:49:49.759 [main] DEBUG - Relacion 1: 
+2024-03-23 15:49:49.759 [main] DEBUG - Relacion 2: 
+2024-03-23 15:49:49.759 [main] DEBUG - Relacion 3: 
+2024-03-23 15:49:49.759 [main] DEBUG - Parseando PCs...
+2024-03-23 15:49:49.759 [main] DEBUG - Presence Condition 0: 
+2024-03-23 15:49:49.759 [main] DEBUG - Presence Condition 1: 
+2024-03-23 15:49:49.759 [main] DEBUG - Presence Condition 2: 
+2024-03-23 15:49:49.759 [main] DEBUG - Presence Condition 3: 
+2024-03-23 15:49:49.759 [main] DEBUG - Presence Condition 4: 
+2024-03-23 15:49:49.759 [main] DEBUG - Presence Condition 5: 
+2024-03-23 15:49:49.759 [main] DEBUG - Parseando places...
+2024-03-23 15:49:49.760 [main] DEBUG - Place 0: 
+2024-03-23 15:49:49.760 [main] DEBUG - Place 1: 
+2024-03-23 15:49:49.760 [main] DEBUG - Place 2: 
+2024-03-23 15:49:49.760 [main] DEBUG - Place 3: 
+2024-03-23 15:49:49.760 [main] DEBUG - Place 4: 
+2024-03-23 15:49:49.760 [main] DEBUG - Place 5: 
+2024-03-23 15:49:49.760 [main] DEBUG - Place 6: 
+2024-03-23 15:49:49.760 [main] DEBUG - Place 7: 
+2024-03-23 15:49:49.761 [main] DEBUG - Place 8: 
+2024-03-23 15:49:49.761 [main] DEBUG - Place 9: 
+2024-03-23 15:49:49.761 [main] DEBUG - Place 10: 
+2024-03-23 15:49:49.761 [main] DEBUG - Place 11: 
+2024-03-23 15:49:49.761 [main] DEBUG - Place 12: 
+2024-03-23 15:49:49.761 [main] DEBUG - Place 13: 
+2024-03-23 15:49:49.761 [main] DEBUG - Place 14: 
+2024-03-23 15:49:49.761 [main] DEBUG - Place 15: 
+2024-03-23 15:49:49.761 [main] DEBUG - Place 16: 
+2024-03-23 15:49:49.761 [main] DEBUG - Place 17: 
+2024-03-23 15:49:49.761 [main] DEBUG - Place 18: 
+2024-03-23 15:49:49.761 [main] DEBUG - Place 19: 
+2024-03-23 15:49:49.761 [main] DEBUG - Place 20: 
+2024-03-23 15:49:49.761 [main] DEBUG - Place 21: 
+2024-03-23 15:49:49.761 [main] DEBUG - Place 22: 
+2024-03-23 15:49:49.761 [main] DEBUG - Place 23: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 24: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 25: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 26: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 27: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 28: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 29: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 30: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 31: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 32: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 33: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 34: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 35: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 36: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 37: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 38: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 39: 
+2024-03-23 15:49:49.762 [main] DEBUG - Place 40: 
+2024-03-23 15:49:49.763 [main] DEBUG - Place 41: 
+2024-03-23 15:49:49.763 [main] DEBUG - Place 42: 
+2024-03-23 15:49:49.763 [main] DEBUG - Place 43: 
+2024-03-23 15:49:49.763 [main] DEBUG - Place 44: 
+2024-03-23 15:49:49.763 [main] DEBUG - Place 45: 
+2024-03-23 15:49:49.763 [main] DEBUG - Place 46: 
+2024-03-23 15:49:49.763 [main] DEBUG - Place 47: 
+2024-03-23 15:49:49.763 [main] DEBUG - Place 48: 
+2024-03-23 15:49:49.763 [main] DEBUG - Place 49: 
+2024-03-23 15:49:49.763 [main] DEBUG - Place 50: 
+2024-03-23 15:49:49.763 [main] DEBUG - Place 51: 
+2024-03-23 15:49:49.763 [main] DEBUG - Place 52: 
+2024-03-23 15:49:49.763 [main] DEBUG - Place 53: 
+2024-03-23 15:49:49.763 [main] DEBUG - Place 54: 
+2024-03-23 15:49:49.763 [main] DEBUG - Place 55: 
+2024-03-23 15:49:49.764 [main] DEBUG - Finalizando la aplicación

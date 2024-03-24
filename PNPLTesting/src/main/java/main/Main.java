@@ -12,7 +12,9 @@ public class Main {
         if (args.length == 0) Utils.LoggerError().error(Literal.PARAMETROS_INVALIDOS);
         else {
             String directorio_raiz = System.getProperty("user.dir") + Literal.NOMBRE_PROYECTO;
-            Controller.getInstance().execute(directorio_raiz + args[0]);
+            String ecore = directorio_raiz + args[0];
+            String xmi = directorio_raiz + args[1];
+            Controller.getInstance().execute(ecore, xmi);
             Utils.LoggerSeguimiento().debug("Finalizando la aplicación");
             Utils.LoggerSeguimiento().trace("-----------------------");
         }

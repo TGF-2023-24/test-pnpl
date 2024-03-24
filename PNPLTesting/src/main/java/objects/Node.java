@@ -62,6 +62,11 @@ public class Node {
         this._excludes = excludes;
     }
 
+    @Override
+    public String toString() {
+        return "{ Nombre: " +_name + "}";
+    }
+
     public static class NodeBuilder {
         private String _name;
         private boolean _isAbstract, _isMandatory;

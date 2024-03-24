@@ -4,8 +4,6 @@ import objects.Node;
 import objects.PNPL;
 import objects.Place;
 import objects.Relation;
-import org.graphwalker.core.model.Edge;
-import org.graphwalker.core.model.Vertex;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import utils.Literal;
@@ -19,17 +17,19 @@ import java.util.List;
 
 public class Parser {
 
-    public static PNPL parse(JSONObject json) {
-        Utils.LoggerSeguimiento().trace("Parseando");
+    public static PNPL parse(Object file) {
+        Utils.LoggerSeguimiento().trace("Parseando...");
         PNPL.PNPLBuilder pnplBuild = new PNPL.PNPLBuilder();
-        JSONObject PetriNet = (JSONObject) json.get("PetriNet");
-        JSONObject FM = (JSONObject) json.get("FeatureModel");
-        JSONArray presenceConditions = (JSONArray) json.get("PresenceConditions");
+        JSONObject json = (JSONObject) file;
+        //JSONObject PetriNet = (JSONObject) json.get("PetriNet");
+        Object PetriNet = Utils.getElement(file, "PetriNet");
+        Object FM = Utils.getElement(file, "FeatureModel");
+        Object presenceConditions = Utils.getElement(file, "PresenceConditions");
 
-        JSONArray nodes = (JSONArray) FM.get("Nodes");
-        JSONArray relations = (JSONArray) FM.get("Relations");
+        Object nodes = Utils.getElement(FM, "Nodes");
+        Object relations =  Utils.getElement(FM, "Relations");
 
-        JSONArray places = (JSONArray) PetriNet.get("places");
+        Object places = Utils.getElement(PetriNet, "places");
 
         return pnplBuild.nodes(parseNodes(nodes))
                 .relations(parseRelations(relations))
@@ -40,12 +40,12 @@ public class Parser {
 
     }
 
-    private static List<Node> parseNodes(JSONArray nodes) {
+    private static List<Node> parseNodes(Object nodes) {
         List<Node> list = new ArrayList<>();
         Utils.LoggerSeguimiento().debug("Parseando nodos...");
         try {
-            for (Object obj : nodes) {
-                JSONObject node = (JSONObject) obj;
+            for (int i = 0; i < Utils.getSize(nodes); i++) {
+                JSONObject node = (JSONObject) Utils.getElement(nodes, i);
                 Node n = new Node.NodeBuilder((String)node.get("name"))
                 .isAbstract((boolean) node.get("abstract"))
                 .isMandatory((boolean) node.get("mandatory"))
@@ -54,10 +54,11 @@ public class Parser {
                 .build();
                 list.add(n);
             }
+            for (int i = 0; i < Utils.getSize(nodes); i++)
             for (Node nodo : list) {
                 nodo.setNodeRequirements(parseRequirements(nodo.getNodeRequirements(), list));
                 nodo.setExcludes(parseRequirements(nodo.getExcludes(), list));
-                Utils.LoggerSeguimiento().debug("Nodo " + list.indexOf(nodo)+": ", nodo.toString());
+                Utils.LoggerSeguimiento().debug("Nodo " + list.indexOf(nodo)+": " + nodo.toString());
             }
         } catch(Exception e) {
             Utils.LoggerError().error("Error al parsear los nodos: " + e.getMessage());
@@ -65,19 +66,19 @@ public class Parser {
             return list;
         }
         
-    private static List<Relation> parseRelations(JSONArray relations) {
+    private static List<Relation> parseRelations(Object relations) {
         List<Relation> list = new ArrayList<>();
         Utils.LoggerSeguimiento().debug("Parseando relaciones...");
         try {
 
-            for (Object obj : relations) {
-                JSONObject relation = (JSONObject) obj;
+            for (int i = 0;  i <  Utils.getSize(relations); i++) {
+                JSONObject relation = (JSONObject) Utils.getElement(relations, i);
                 Relation relacion = new Relation.RelationBuilder(relation.get("parent").toString())
                 .children(parseChildren((JSONArray) relation.get("children")))
                 .type(parseType(relation.get("type").toString()))
                 .build();
                 list.add(relacion);
-                Utils.LoggerSeguimiento().debug("Relacion " + list.indexOf(relacion)+": ", relacion.toString());
+                Utils.LoggerSeguimiento().debug("Relacion " + list.indexOf(relacion)+": " + relacion.toString());
             }
         } catch (Exception e) {
             Utils.LoggerError().error("Error al parsear las relaciones: " + e.getMessage());
@@ -116,15 +117,15 @@ public class Parser {
         return null;
     }
 
-    private static List<String> parsePresenceCondition(JSONArray presenceConditions) {
+    private static List<String> parsePresenceCondition(Object presenceConditions) {
         List<String> list = new ArrayList<>();
         Utils.LoggerSeguimiento().debug("Parseando PCs...");
         try {
-            for (Object obj : presenceConditions) {
-                JSONObject pc = (JSONObject) obj;
+            for (int i = 0;  i < Utils.getSize(presenceConditions); i++) {
+                JSONObject pc = (JSONObject) Utils.getElement(presenceConditions, i);
                 String presenceCondition = pc.get("id").toString();
                 list.add(presenceCondition);
-                Utils.LoggerSeguimiento().debug("Presence Condition " + list.indexOf(presenceCondition)+": ", presenceCondition);
+                Utils.LoggerSeguimiento().debug("Presence Condition " + list.indexOf(presenceCondition)+": " + presenceCondition);
             }
         } catch(Exception e) {
             Utils.LoggerError().error("Error al parsear las PCs: " + e.getMessage());
@@ -132,19 +133,19 @@ public class Parser {
         return list;
     }
 
-    private static List<Place> parsePlaces(JSONArray places) {
+    private static List<Place> parsePlaces(Object places) {
         List<Place> list = new ArrayList<>();
         Utils.LoggerSeguimiento().debug("Parseando places...");
         try {
 
-            for (Object obj : places) {
-                JSONObject place = (JSONObject) obj;
+            for (int i = 0; i < Utils.getSize(places); i++) {
+                JSONObject place = (JSONObject) Utils.getElement(places, i);
                 
                 Place p = new Place.PlaceBuilder(place.get("name").toString())
                 .presenceCondition(place.get("id_PC").toString())
                 .build();
                 list.add(p);
-                Utils.LoggerSeguimiento().debug("Place " + list.indexOf(p)+": ", p.toString());
+                Utils.LoggerSeguimiento().debug("Place " + list.indexOf(p)+": " + p.toString());
 
             }
         } catch(Exception e) {

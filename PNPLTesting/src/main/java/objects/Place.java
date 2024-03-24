@@ -11,6 +11,10 @@ public class Place {
     public String getName() { return name; }
     public String getPresenceCondition() { return pc; }
 
+    @Override
+    public String toString() {
+        return "{ Nombre: " +name + "}";
+    }
     public static class PlaceBuilder {
         private String name, pc;
 

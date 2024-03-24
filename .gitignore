@@ -1,2 +1,13 @@
 
 *.class
+PNPLTesting/target/classes/controller/Controller.class
+PNPLTesting/target/classes/controller/ControllerImp.class
+PNPLTesting/target/classes/main/Main.class
+PNPLTesting/target/classes/objects/Node.class
+PNPLTesting/target/classes/objects/Node$NodeBuilder.class
+PNPLTesting/target/classes/objects/Place.class
+PNPLTesting/target/classes/objects/Place$PlaceBuilder.class
+PNPLTesting/target/classes/objects/Relation.class
+PNPLTesting/target/classes/objects/Relation$RelationBuilder.class
+PNPLTesting/target/classes/parser/Parser.class
+PNPLTesting/target/classes/utils/Utils.class

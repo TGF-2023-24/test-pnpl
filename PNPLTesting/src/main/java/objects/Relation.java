@@ -20,7 +20,7 @@ public class Relation extends Edge {
 
     @Override
     public String toString() {
-        return "{ Origen: " +parentNode + "; Destinos: " + children.toString() + "}";
+        return "{ Origen: " +parentNode + "; Tipo: " + type + "; Destinos: " + children.toString() + "}";
     }
     public static class RelationBuilder {
         private String parentNode;

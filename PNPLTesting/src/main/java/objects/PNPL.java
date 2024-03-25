@@ -1,8 +1,4 @@
 package objects;
-
-import org.graphwalker.core.model.Edge;
-import org.graphwalker.core.model.Vertex;
-
 import java.util.ArrayList;
 import java.util.List;
 

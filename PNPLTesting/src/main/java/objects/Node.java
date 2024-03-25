@@ -42,6 +42,10 @@ public class Node {
         return _excludes;
     }
 
+    public Vertex getVertex() {
+        return _vertex;
+    }
+
     public void setNameNode(String name) {
         this._name = name;
     }

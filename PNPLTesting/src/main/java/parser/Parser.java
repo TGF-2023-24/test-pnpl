@@ -19,9 +19,7 @@ public class Parser {
 
     public static PNPL parse(Object file) {
         Utils.LoggerSeguimiento().trace("Parseando...");
-        PNPL.PNPLBuilder pnplBuild = new PNPL.PNPLBuilder();
-        JSONObject json = (JSONObject) file;
-        //JSONObject PetriNet = (JSONObject) json.get("PetriNet");
+        PNPL.PNPLBuilder pnplBuild = new PNPL.PNPLBuilder();    
         Object PetriNet = Utils.getElement(file, "PetriNet");
         Object FM = Utils.getElement(file, "FeatureModel");
         Object presenceConditions = Utils.getElement(file, "PresenceConditions");

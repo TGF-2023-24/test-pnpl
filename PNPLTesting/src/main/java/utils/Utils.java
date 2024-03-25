@@ -7,6 +7,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 
 
 public class Utils {
@@ -26,15 +28,22 @@ public class Utils {
             return obj.get(name);
         }
         Document doc = (Document) element;
-        NodeList array = doc.getElementsByTagName(name);
+        NodeList array = doc.getElementsByTagName(name).item(0).getChildNodes();
         return array;
     }
-
-    public static Object getElement(Object element, String name) {
+    
+    public static Object getAttribute(Object element, String name) {
         if (isJSON(element))  {
             JSONObject obj = (JSONObject) element;
             return obj.get(name);
         }
+
+        Node childNode = (Node) element;
+        if (childNode.getNodeType() == Node.ELEMENT_NODE) {
+            Element childElement = (Element) childNode;
+            return childElement.getAttribute(name);
+        }
+        
         return null;
     }
 

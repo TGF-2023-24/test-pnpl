@@ -20,14 +20,14 @@ public class Parser {
     public static PNPL parse(Object file) {
         Utils.LoggerSeguimiento().trace("Parseando...");
         PNPL.PNPLBuilder pnplBuild = new PNPL.PNPLBuilder();    
-        Object PetriNet = Utils.getElement(file, "PetriNet");
-        Object FM = Utils.getElement(file, "FeatureModel");
-        Object presenceConditions = Utils.getElement(file, "PresenceConditions");
+        Object PetriNet = Utils.getList(file, "PetriNet");
+        Object FM = Utils.getList(file, "FeatureModel");
+        Object presenceConditions = Utils.getList(file, "PresenceConditions");
 
-        Object nodes = Utils.getElement(FM, "Nodes");
-        Object relations =  Utils.getElement(FM, "Relations");
+        Object nodes = Utils.getList(FM, "Nodes");
+        Object relations =  Utils.getList(FM, "Relations");
 
-        Object places = Utils.getElement(PetriNet, "places");
+        Object places = Utils.getList(PetriNet, "places");
 
         return pnplBuild.nodes(parseNodes(nodes))
                 .relations(parseRelations(relations))

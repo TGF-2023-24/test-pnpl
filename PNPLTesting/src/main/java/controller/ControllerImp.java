@@ -55,9 +55,10 @@ public class ControllerImp extends Controller {
                 }
             }
 
+            Utils.LoggerSeguimiento().debug("Probando metamodelo...");
             PNPL pnpl = Parser.parse(jsonObject);
-
-            //PNPL pnpl_a_probar = Parser.parse(doc);
+            Utils.LoggerSeguimiento().debug("Probando modelo...");
+            PNPL pnpl_a_probar = Parser.parse(doc);
         } catch (IOException | ParseException | ParserConfigurationException | SAXException e) {
             Utils.LoggerError().error(e.getMessage());
             Utils.LoggerError().error(Literal.FORMATO_INVALIDO);

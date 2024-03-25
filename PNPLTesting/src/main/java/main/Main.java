@@ -6,8 +6,8 @@ import utils.Utils;
 
 public class Main {
     public static void main(String[] args) {
-        Utils.LoggerSeguimiento().trace("-----------------------");
-        Utils.LoggerSeguimiento().debug("Iniciando la aplicación");
+        Utils.LoggerSeguimiento().trace(Literal.SEPARADOR);
+        Utils.LoggerSeguimiento().debug(Literal.INICIO);
         
         if (args.length == 0) Utils.LoggerError().error(Literal.PARAMETROS_INVALIDOS);
         else {
@@ -15,8 +15,8 @@ public class Main {
             String ecore = directorio_raiz + args[0];
             String xmi = directorio_raiz + args[1];
             Controller.getInstance().execute(ecore, xmi);
-            Utils.LoggerSeguimiento().debug("Finalizando la aplicación");
-            Utils.LoggerSeguimiento().trace("-----------------------");
+            Utils.LoggerSeguimiento().debug(Literal.FIN);
+            Utils.LoggerSeguimiento().trace(Literal.SEPARADOR);
         }
     }
 }

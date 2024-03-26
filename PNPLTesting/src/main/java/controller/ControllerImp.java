@@ -35,28 +35,8 @@ public class ControllerImp extends Controller {
             DocumentBuilder db = dbf.newDocumentBuilder();
             Document doc = db.parse(new File(xmiPath));
 
-            NodeList featureModelList = doc.getElementsByTagName("featuremodel");
-            Node featureModelNode = featureModelList.item(0); // Assuming there's only one featuremodel node
-
-            // Access child nodes of featuremodel
-            NodeList featureModelChildren = featureModelNode.getChildNodes();
-            for (int i = 0; i < featureModelChildren.getLength(); i++) {
-                Node childNode = featureModelChildren.item(i);
-                if (childNode.getNodeType() == Node.ELEMENT_NODE) {
-                    Element childElement = (Element) childNode;
-                    // Access attributes or values of child elements as needed
-                    String nodeName = childElement.getAttribute("name");
-                    String mandatory = childElement.getAttribute("mandatory");
-                    String requires = childElement.getAttribute("requires");
-                    System.out.println("Node Name: " + nodeName);
-                    System.out.println("Mandatory: " + mandatory);
-                    System.out.println("Requires: " + requires);
-                    // Continue processing other attributes or values if necessary
-                }
-            }
-
             Utils.LoggerSeguimiento().debug("Probando metamodelo...");
-            PNPL pnpl = Parser.parse(jsonObject);
+            //PNPL pnpl = Parser.parse(jsonObject);
             Utils.LoggerSeguimiento().debug("Probando modelo...");
             PNPL pnpl_a_probar = Parser.parse(doc);
         } catch (IOException | ParseException | ParserConfigurationException | SAXException e) {

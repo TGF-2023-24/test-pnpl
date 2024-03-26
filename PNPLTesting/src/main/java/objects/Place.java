@@ -16,7 +16,7 @@ public class Place {
         return "{ Nombre: " +name + "}";
     }
     public static class PlaceBuilder {
-        private String name, pc;
+        private String name, pc, source, target, type;
 
         public PlaceBuilder(String name) {
             this.name = name;
@@ -26,6 +26,7 @@ public class Place {
             pc = !id.equals("invalid") ? id : "";
             return this;
         }
+        
         public Place build() {
             return new Place(name,pc);
         }

@@ -7,11 +7,15 @@ public class PNPL {
     private List<Relation> relations;
     List<String> presenceConditionList;
     List<Place> places;
-    private PNPL(List<Node> nodes, List<Relation> relations, List<String> pcList, List<Place> places) {
+    List<Transition> transitions;
+    List<Arc> arcs;
+
+    private PNPL(List<Node> nodes, List<Relation> relations, List<String> pcList, List<Transition> transitions, List<Arc> arcs) {
         this.nodes = nodes;
         this.relations = relations;
         this.presenceConditionList = pcList;
-        this.places = places;
+        this.transitions = transitions;
+        this.arcs = arcs;
     }
 
     public List<Node> getNodes() {
@@ -27,6 +31,8 @@ public class PNPL {
         private List<Relation> relations;
         List<String> presenceConditionList;
         List<Place> places;
+        List<Transition> transitions;
+        List<Arc> arcs;
         public PNPLBuilder nodes(List<Node> nodes) {
             if (nodes == null) nodes = new ArrayList<>();
             this.nodes = nodes;
@@ -47,9 +53,18 @@ public class PNPL {
             this.places = places;
             return this;
         }
-
+        public PNPLBuilder transitions(List<Transition> transitions) {
+            if (transitions == null) transitions = new ArrayList<>();
+            this.transitions = transitions;
+            return this;
+        }
+        public PNPLBuilder arcs(List<Arc> arcs) {
+            if (arcs == null) arcs = new ArrayList<>();
+            this.arcs = arcs;
+            return this;
+        }
         public PNPL build() {
-            return new PNPL(nodes, relations, presenceConditionList, places);
+            return new PNPL(nodes, relations, presenceConditionList, transitions, arcs);
         }
     }
 }

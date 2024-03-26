@@ -27,9 +27,30 @@ public class Utils {
             JSONObject obj = (JSONObject) element;
             return obj.get(name);
         }
-        Document doc = (Document) element;
-        NodeList array = doc.getElementsByTagName(name).item(0).getChildNodes();
-        return array;
+        try {
+
+            Document doc = (Document) element;
+            Node array = doc.getElementsByTagName(name).item(0);
+            return array;
+        } catch(Exception e) {
+            NodeList nodesList = ((Element) element).getElementsByTagName(name);
+            return nodesList;
+        }
+    }
+
+    public static Object getListComplete(Object element, String name) {
+        if (isJSON(element))  {
+            JSONObject obj = (JSONObject) element;
+            return obj.get(name);
+        }
+        try {
+
+            Document doc = (Document) element;
+            return doc.getElementsByTagName(name);
+        } catch(Exception e) {
+            NodeList nodesList = ((Element) element).getElementsByTagName(name);
+            return nodesList;
+        }
     }
     
     public static Object getAttribute(Object element, String name) {
@@ -41,10 +62,26 @@ public class Utils {
         Node childNode = (Node) element;
         if (childNode.getNodeType() == Node.ELEMENT_NODE) {
             Element childElement = (Element) childNode;
-            return childElement.getAttribute(name);
+            Object attribute = childElement.getAttribute(name);
+            return attribute;
+        }
+        return null;
+    }
+
+    public static boolean getBooleanAttribute(Object element, String name) {
+        if (isJSON(element))  {
+            JSONObject obj = (JSONObject) element;
+            return (boolean) obj.get(name);
+        }
+
+        Node childNode = (Node) element;
+        if (childNode.getNodeType() == Node.ELEMENT_NODE) {
+            Element childElement = (Element) childNode;
+            Object attribute = childElement.getAttribute(name);
+            if (attribute == "true") return true;
         }
         
-        return null;
+        return false;
     }
 
     public static Object getElement(Object element, int index) {

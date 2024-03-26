@@ -1,9 +1,12 @@
 package parser;
 
+import objects.Arc;
 import objects.Node;
 import objects.PNPL;
 import objects.Place;
 import objects.Relation;
+import objects.Transition;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import utils.Literal;
@@ -20,19 +23,20 @@ public class Parser {
     public static PNPL parse(Object file) {
         Utils.LoggerSeguimiento().trace("Parseando...");
         PNPL.PNPLBuilder pnplBuild = new PNPL.PNPLBuilder();    
-        Object PetriNet = Utils.getList(file, "PetriNet");
-        Object FM = Utils.getList(file, "FeatureModel");
-        Object presenceConditions = Utils.getList(file, "PresenceConditions");
+        Object PetriNet = Utils.getList(file, "pn_150");
+        Object FM = Utils.getList(file, "featuremodel");
+        Object presenceConditions = Utils.getListComplete(file, "presenceconditions");
 
-        Object nodes = Utils.getList(FM, "Nodes");
-        Object relations =  Utils.getList(FM, "Relations");
+        Object nodes = Utils.getList(FM, "nodes");
+        Object relations =  Utils.getList(FM, "relations");
 
-        Object places = Utils.getList(PetriNet, "places");
+        Object elements = Utils.getList(PetriNet, "elements");
 
         return pnplBuild.nodes(parseNodes(nodes))
                 .relations(parseRelations(relations))
                 .presenceCondition(parsePresenceCondition(presenceConditions))
-                .places(parsePlaces(places))
+                .transitions(parseTransitions(elements))
+                .arcs(parseArc(elements))
                 .build();
 
 
@@ -43,12 +47,12 @@ public class Parser {
         Utils.LoggerSeguimiento().debug("Parseando nodos...");
         try {
             for (int i = 0; i < Utils.getSize(nodes); i++) {
-                JSONObject node = (JSONObject) Utils.getElement(nodes, i);
-                Node n = new Node.NodeBuilder((String)node.get("name"))
-                .isAbstract((boolean) node.get("abstract"))
-                .isMandatory((boolean) node.get("mandatory"))
-                .requirments(Arrays.stream(node.get("requires").toString().split("(?=[A-Z])")).toList())
-                .excludes(Arrays.stream(node.get("excludes").toString().split("(?=[A-Z])")).toList())
+                Object node = Utils.getElement(nodes, i);
+                Node n = new Node.NodeBuilder((String)Utils.getAttribute(node, "name"))
+                .isAbstract(Utils.getBooleanAttribute(node, "abstract"))
+                .isMandatory(Utils.getBooleanAttribute(node, "mandatory"))
+                .requirments(Arrays.stream(Utils.getAttribute(node, "requires").toString().split("(?=[A-Z])")).toList())
+                .excludes(Arrays.stream(Utils.getAttribute(node, "excludes").toString().split("(?=[A-Z])")).toList())
                 .build();
                 list.add(n);
             }
@@ -70,10 +74,12 @@ public class Parser {
         try {
 
             for (int i = 0;  i <  Utils.getSize(relations); i++) {
-                JSONObject relation = (JSONObject) Utils.getElement(relations, i);
-                Relation relacion = new Relation.RelationBuilder(relation.get("parent").toString())
-                .children(parseChildren((JSONArray) relation.get("children")))
-                .type(parseType(relation.get("type").toString()))
+                Object relation = Utils.getElement(relations, i);
+                Object aux_list = Utils.getAttribute(relation, "children");
+                if (aux_list == "") aux_list = Utils.getAttribute(relation, "childs");
+                Relation relacion = new Relation.RelationBuilder(Utils.getAttribute(relation,"parent").toString())
+                .children(Arrays.stream(aux_list.toString().split("(?=[A-Z])")).toList())
+                .type(parseType(Utils.getAttribute(relation,"type").toString()))
                 .build();
                 list.add(relacion);
                 Utils.LoggerSeguimiento().debug("Relacion " + list.indexOf(relacion)+": " + relacion.toString());
@@ -120,8 +126,8 @@ public class Parser {
         Utils.LoggerSeguimiento().debug("Parseando PCs...");
         try {
             for (int i = 0;  i < Utils.getSize(presenceConditions); i++) {
-                JSONObject pc = (JSONObject) Utils.getElement(presenceConditions, i);
-                String presenceCondition = pc.get("id").toString();
+                Object pc = Utils.getElement(presenceConditions, i);
+                String presenceCondition = Utils.getAttribute(pc, "id").toString();
                 list.add(presenceCondition);
                 Utils.LoggerSeguimiento().debug("Presence Condition " + list.indexOf(presenceCondition)+": " + presenceCondition);
             }
@@ -131,23 +137,59 @@ public class Parser {
         return list;
     }
 
-    private static List<Place> parsePlaces(Object places) {
-        List<Place> list = new ArrayList<>();
+    private static List<Transition> parseTransitions(Object elements) {
+        List<Transition> list = new ArrayList<>();
         Utils.LoggerSeguimiento().debug("Parseando places...");
         try {
 
-            for (int i = 0; i < Utils.getSize(places); i++) {
-                JSONObject place = (JSONObject) Utils.getElement(places, i);
-                
-                Place p = new Place.PlaceBuilder(place.get("name").toString())
-                .presenceCondition(place.get("id_PC").toString())
-                .build();
-                list.add(p);
-                Utils.LoggerSeguimiento().debug("Place " + list.indexOf(p)+": " + p.toString());
+            for (int i = 0; i < Utils.getSize(elements); i++) {
+                Object element = Utils.getElement(elements, i);
+                String type = Utils.getAttribute(element, "xsi:type").toString();
+
+                if (type.contains("Transition")) {
+                    Transition transition = new Transition.TransitionBuilder(Utils.getAttribute(element, "name").toString())
+                    .presenceCondition(Utils.getAttribute(element, "presenceCondition").toString())
+                    .build();
+                    list.add(transition);
+                    Utils.LoggerSeguimiento().debug("Transition " + list.indexOf(transition)+": " + transition.toString());
+                }
+
+                // Place p = new Place.PlaceBuilder(Utils.getAttribute(place, "name").toString())
+                // .presenceCondition(Utils.getAttribute(place, "id").toString())
+                // .build();
+                // list.add(p);
+                // Utils.LoggerSeguimiento().debug("Place " + list.indexOf(p)+": " + p.toString());
 
             }
         } catch(Exception e) {
-            Utils.LoggerError().error("Error al parsear los places: " + e.getMessage());
+            Utils.LoggerError().error("Error al parsear las transiciones: " + e.getMessage());
+        }
+            return list;
+    }
+
+    private static List<Arc> parseArc(Object elements) {
+        List<Arc> list = new ArrayList<>();
+        Utils.LoggerSeguimiento().debug("Parseando places...");
+        try {
+
+            for (int i = 0; i < Utils.getSize(elements); i++) {
+                Object element = Utils.getElement(elements, i);
+                String type = Utils.getAttribute(element, "xsi:type").toString();
+
+                if (type.contains("Arc")) {
+                    Arc arco = new Arc.ArcBuilder(Utils.getAttribute(element, "name").toString())
+                    .presenceCondition(Utils.getAttribute(element, "presenceCondition").toString())
+                    .type(Utils.getAttribute(element, "xsi:type").toString())
+                    .source(Utils.getAttribute(element, "source").toString())
+                    .target(Utils.getAttribute(element, "target").toString())
+                    .build();
+                    list.add(arco);
+                    Utils.LoggerSeguimiento().debug("Arc " + list.indexOf(arco)+": " + arco.toString());
+                }
+
+            }
+        } catch(Exception e) {
+            Utils.LoggerError().error("Error al parsear los arcos: " + e.getMessage());
         }
             return list;
     }

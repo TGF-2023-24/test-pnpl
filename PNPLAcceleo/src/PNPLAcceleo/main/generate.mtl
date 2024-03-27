@@ -5,15 +5,16 @@
 [comment @main/]
 [file ('datos.json', false, 'UTF-8')]
 {
-	"PetriNet": {
+	"pn_150": {
 		"places":['['/]
 			[for (element: Element | apnpl.pn_150.elements) separator (',')]
 				{
 					"name": "[element.name/]",
+					"xsi:type": "[element.eClass().toString().substring(element.eClass().toString().index(':')+2, element.eClass().toString().index(')')-1)/]",
 					[if (element.name.equalsIgnoreCase('invalid'))]
-					id_PC": ""
+					"presenceCondition": ""
 					[else]
-					"id_PC": "[element.presenceCondition.id/]"
+					"presenceCondition": "[element.presenceCondition.id/]"
 					[/if]
 				}
 			[/for]
@@ -38,11 +39,8 @@
 				{
 					"parent": "[relacion.parent.name/]",
 					"type": "[relacion.type/]",
-					"children": ['['/]
-						[for (hijo: Node | relacion.childs) separator(',')]
-							"[hijo.name/]"
-						[/for]
-					[']'/]
+					"children":"[for (hijo: Node | relacion.childs) separator(' ')][hijo.name/][/for]"
+					
 				}
 			[/for]
 		[ ']' /]

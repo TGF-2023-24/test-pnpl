@@ -6,7 +6,7 @@
 [file ('datos.json', false, 'UTF-8')]
 {
 	"pn_150": {
-		"places":['['/]
+		"elements":['['/]
 			[for (element: Element | apnpl.pn_150.elements) separator (',')]
 				{
 					"name": "[element.name/]",
@@ -21,8 +21,8 @@
 
 		[']'/]
 		},
-	"FeatureModel": {
-		"Nodes": [ '[' /] 
+	"featuremodel": {
+		"nodes": [ '[' /] 
 			[for (nodo: Node | apnpl.featuremodel.nodes) separator(',')]
 				{
 					"name": "[nodo.name/]",
@@ -34,7 +34,7 @@
 				}
 			[/for]
 		[ ']' /],
-		"Relations": [ '[' /]
+		"relations": [ '[' /]
 			[for (relacion: Relation | apnpl.featuremodel.relations) separator(',')]
 				{
 					"parent": "[relacion.parent.name/]",
@@ -45,7 +45,7 @@
 			[/for]
 		[ ']' /]
 	},
-	"PresenceConditions": [ '[' /] 
+	"presenceconditions": [ '[' /] 
 		[for (pc: PresenceCondition | apnpl.presenceconditions) separator(',')]
 			{
 				"id": "[pc.id/]"

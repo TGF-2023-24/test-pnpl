@@ -1,153 +1,289 @@
-2024-03-24 10:50:33.324 [main] DEBUG - Iniciando la aplicación
-2024-03-24 10:50:33.347 [main] DEBUG - Parseando nodos...
-2024-03-24 10:50:33.351 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
-2024-03-24 10:50:33.351 [main] DEBUG - Nodo 1: { Nombre: Container}
-2024-03-24 10:50:33.351 [main] DEBUG - Nodo 2: { Nombre: Supplement}
-2024-03-24 10:50:33.352 [main] DEBUG - Nodo 3: { Nombre: Beverage}
-2024-03-24 10:50:33.352 [main] DEBUG - Nodo 4: { Nombre: Solid}
-2024-03-24 10:50:33.352 [main] DEBUG - Nodo 5: { Nombre: Tea}
-2024-03-24 10:50:33.352 [main] DEBUG - Nodo 6: { Nombre: Coffee}
-2024-03-24 10:50:33.352 [main] DEBUG - Nodo 7: { Nombre: Sugar}
-2024-03-24 10:50:33.352 [main] DEBUG - Nodo 8: { Nombre: Milk}
-2024-03-24 10:50:33.352 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
-2024-03-24 10:50:33.352 [main] DEBUG - Nodo 1: { Nombre: Container}
-2024-03-24 10:50:33.352 [main] DEBUG - Nodo 2: { Nombre: Supplement}
-2024-03-24 10:50:33.352 [main] DEBUG - Nodo 3: { Nombre: Beverage}
-2024-03-24 10:50:33.352 [main] DEBUG - Nodo 4: { Nombre: Solid}
-2024-03-24 10:50:33.352 [main] DEBUG - Nodo 5: { Nombre: Tea}
-2024-03-24 10:50:33.352 [main] DEBUG - Nodo 6: { Nombre: Coffee}
-2024-03-24 10:50:33.353 [main] DEBUG - Nodo 7: { Nombre: Sugar}
-2024-03-24 10:50:33.353 [main] DEBUG - Nodo 8: { Nombre: Milk}
-2024-03-24 10:50:33.353 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
-2024-03-24 10:50:33.353 [main] DEBUG - Nodo 1: { Nombre: Container}
-2024-03-24 10:50:33.353 [main] DEBUG - Nodo 2: { Nombre: Supplement}
-2024-03-24 10:50:33.353 [main] DEBUG - Nodo 3: { Nombre: Beverage}
-2024-03-24 10:50:33.353 [main] DEBUG - Nodo 4: { Nombre: Solid}
-2024-03-24 10:50:33.353 [main] DEBUG - Nodo 5: { Nombre: Tea}
-2024-03-24 10:50:33.353 [main] DEBUG - Nodo 6: { Nombre: Coffee}
-2024-03-24 10:50:33.353 [main] DEBUG - Nodo 7: { Nombre: Sugar}
-2024-03-24 10:50:33.353 [main] DEBUG - Nodo 8: { Nombre: Milk}
-2024-03-24 10:50:33.353 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
-2024-03-24 10:50:33.353 [main] DEBUG - Nodo 1: { Nombre: Container}
-2024-03-24 10:50:33.353 [main] DEBUG - Nodo 2: { Nombre: Supplement}
-2024-03-24 10:50:33.353 [main] DEBUG - Nodo 3: { Nombre: Beverage}
-2024-03-24 10:50:33.354 [main] DEBUG - Nodo 4: { Nombre: Solid}
-2024-03-24 10:50:33.354 [main] DEBUG - Nodo 5: { Nombre: Tea}
-2024-03-24 10:50:33.354 [main] DEBUG - Nodo 6: { Nombre: Coffee}
-2024-03-24 10:50:33.354 [main] DEBUG - Nodo 7: { Nombre: Sugar}
-2024-03-24 10:50:33.354 [main] DEBUG - Nodo 8: { Nombre: Milk}
-2024-03-24 10:50:33.354 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
-2024-03-24 10:50:33.354 [main] DEBUG - Nodo 1: { Nombre: Container}
-2024-03-24 10:50:33.354 [main] DEBUG - Nodo 2: { Nombre: Supplement}
-2024-03-24 10:50:33.354 [main] DEBUG - Nodo 3: { Nombre: Beverage}
-2024-03-24 10:50:33.354 [main] DEBUG - Nodo 4: { Nombre: Solid}
-2024-03-24 10:50:33.354 [main] DEBUG - Nodo 5: { Nombre: Tea}
-2024-03-24 10:50:33.354 [main] DEBUG - Nodo 6: { Nombre: Coffee}
-2024-03-24 10:50:33.354 [main] DEBUG - Nodo 7: { Nombre: Sugar}
-2024-03-24 10:50:33.354 [main] DEBUG - Nodo 8: { Nombre: Milk}
-2024-03-24 10:50:33.355 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
-2024-03-24 10:50:33.355 [main] DEBUG - Nodo 1: { Nombre: Container}
-2024-03-24 10:50:33.355 [main] DEBUG - Nodo 2: { Nombre: Supplement}
-2024-03-24 10:50:33.355 [main] DEBUG - Nodo 3: { Nombre: Beverage}
-2024-03-24 10:50:33.355 [main] DEBUG - Nodo 4: { Nombre: Solid}
-2024-03-24 10:50:33.355 [main] DEBUG - Nodo 5: { Nombre: Tea}
-2024-03-24 10:50:33.355 [main] DEBUG - Nodo 6: { Nombre: Coffee}
-2024-03-24 10:50:33.355 [main] DEBUG - Nodo 7: { Nombre: Sugar}
-2024-03-24 10:50:33.355 [main] DEBUG - Nodo 8: { Nombre: Milk}
-2024-03-24 10:50:33.355 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
-2024-03-24 10:50:33.355 [main] DEBUG - Nodo 1: { Nombre: Container}
-2024-03-24 10:50:33.355 [main] DEBUG - Nodo 2: { Nombre: Supplement}
-2024-03-24 10:50:33.355 [main] DEBUG - Nodo 3: { Nombre: Beverage}
-2024-03-24 10:50:33.355 [main] DEBUG - Nodo 4: { Nombre: Solid}
-2024-03-24 10:50:33.355 [main] DEBUG - Nodo 5: { Nombre: Tea}
-2024-03-24 10:50:33.355 [main] DEBUG - Nodo 6: { Nombre: Coffee}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 7: { Nombre: Sugar}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 8: { Nombre: Milk}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 1: { Nombre: Container}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 2: { Nombre: Supplement}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 3: { Nombre: Beverage}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 4: { Nombre: Solid}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 5: { Nombre: Tea}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 6: { Nombre: Coffee}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 7: { Nombre: Sugar}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 8: { Nombre: Milk}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 1: { Nombre: Container}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 2: { Nombre: Supplement}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 3: { Nombre: Beverage}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 4: { Nombre: Solid}
-2024-03-24 10:50:33.356 [main] DEBUG - Nodo 5: { Nombre: Tea}
-2024-03-24 10:50:33.357 [main] DEBUG - Nodo 6: { Nombre: Coffee}
-2024-03-24 10:50:33.357 [main] DEBUG - Nodo 7: { Nombre: Sugar}
-2024-03-24 10:50:33.357 [main] DEBUG - Nodo 8: { Nombre: Milk}
-2024-03-24 10:50:33.357 [main] DEBUG - Parseando relaciones...
-2024-03-24 10:50:33.358 [main] DEBUG - Relacion 0: { Origen: VendingMachine; Destinos: [Container, Supplement]}
-2024-03-24 10:50:33.359 [main] DEBUG - Relacion 1: { Origen: Container; Destinos: [Beverage, Solid]}
-2024-03-24 10:50:33.359 [main] DEBUG - Relacion 2: { Origen: Beverage; Destinos: [Tea, Coffee]}
-2024-03-24 10:50:33.359 [main] DEBUG - Relacion 3: { Origen: Supplement; Destinos: [Sugar, Milk]}
-2024-03-24 10:50:33.359 [main] DEBUG - Parseando PCs...
-2024-03-24 10:50:33.359 [main] DEBUG - Presence Condition 0: SolidPC
-2024-03-24 10:50:33.359 [main] DEBUG - Presence Condition 1: CoffeePC
-2024-03-24 10:50:33.359 [main] DEBUG - Presence Condition 2: BeveragePC
-2024-03-24 10:50:33.359 [main] DEBUG - Presence Condition 3: MilkPC
-2024-03-24 10:50:33.360 [main] DEBUG - Presence Condition 4: SugarPC
-2024-03-24 10:50:33.360 [main] DEBUG - Presence Condition 5: TeaPC
-2024-03-24 10:50:33.360 [main] DEBUG - Parseando places...
-2024-03-24 10:50:33.360 [main] DEBUG - Place 0: { Nombre: p_start}
-2024-03-24 10:50:33.360 [main] DEBUG - Place 1: { Nombre: p_solid}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 2: { Nombre: p_coffee}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 3: { Nombre: p_coffee_end}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 4: { Nombre: p_beverage}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 5: { Nombre: p_cup}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 6: { Nombre: p_beverage_end}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 7: { Nombre: p_milk}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 8: { Nombre: p_sugar}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 9: { Nombre: p_tea}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 10: { Nombre: p_end}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 11: { Nombre: t_solid}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 12: { Nombre: t_solid_end}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 13: { Nombre: t_coffee}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 14: { Nombre: t_coffee_end}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 15: { Nombre: t_milk_no}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 16: { Nombre: t_milk}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 17: { Nombre: t_milk_end}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 18: { Nombre: t_beverage}
-2024-03-24 10:50:33.361 [main] DEBUG - Place 19: { Nombre: t_beverage_end}
-2024-03-24 10:50:33.362 [main] DEBUG - Place 20: { Nombre: t_sugar_no}
-2024-03-24 10:50:33.362 [main] DEBUG - Place 21: { Nombre: t_sugar}
-2024-03-24 10:50:33.362 [main] DEBUG - Place 22: { Nombre: t_sugar_end}
-2024-03-24 10:50:33.362 [main] DEBUG - Place 23: { Nombre: t_tea}
-2024-03-24 10:50:33.362 [main] DEBUG - Place 24: { Nombre: t_tea_end}
-2024-03-24 10:50:33.362 [main] DEBUG - Place 25: { Nombre: t_end}
-2024-03-24 10:50:33.362 [main] DEBUG - Place 26: { Nombre: a_solid_in}
-2024-03-24 10:50:33.362 [main] DEBUG - Place 27: { Nombre: a_solid_out}
-2024-03-24 10:50:33.362 [main] DEBUG - Place 28: { Nombre: a_solid_end_in}
-2024-03-24 10:50:33.362 [main] DEBUG - Place 29: { Nombre: a_solid_end_out}
-2024-03-24 10:50:33.362 [main] DEBUG - Place 30: { Nombre: a_beverage_in}
-2024-03-24 10:50:33.362 [main] DEBUG - Place 31: { Nombre: a_beverage_out}
-2024-03-24 10:50:33.362 [main] DEBUG - Place 32: { Nombre: a_beverage_end_in}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 33: { Nombre: a_beverage_end_out}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 34: { Nombre: a_sugar_no_in}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 35: { Nombre: a_sugar_no_out}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 36: { Nombre: a_coffee_in}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 37: { Nombre: a_coffee_out}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 38: { Nombre: a_coffee_end_in}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 39: { Nombre: a_coffee_end_out}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 40: { Nombre: a_milk_no_in}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 41: { Nombre: a_milk_no_out}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 42: { Nombre: a_milk_in}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 43: { Nombre: a_milk_out}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 44: { Nombre: a_milk_end_in}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 45: { Nombre: a_milk_end_out}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 46: { Nombre: a_sugar_in}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 47: { Nombre: a_sugar_out}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 48: { Nombre: a_sugar_end_in}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 49: { Nombre: a_sugar_end_out}
-2024-03-24 10:50:33.363 [main] DEBUG - Place 50: { Nombre: a_tea_in}
-2024-03-24 10:50:33.364 [main] DEBUG - Place 51: { Nombre: a_tea_out}
-2024-03-24 10:50:33.364 [main] DEBUG - Place 52: { Nombre: a_tea_end_in}
-2024-03-24 10:50:33.364 [main] DEBUG - Place 53: { Nombre: a_tea_end_out}
-2024-03-24 10:50:33.364 [main] DEBUG - Place 54: { Nombre: a_end_in}
-2024-03-24 10:50:33.364 [main] DEBUG - Place 55: { Nombre: a_end_out}
-2024-03-24 10:50:33.364 [main] DEBUG - Finalizando la aplicación
+2024-04-03 13:04:34.177 [main] DEBUG - Iniciando la aplicación
+2024-04-03 13:04:34.187 [main] DEBUG - Parseando metamodelo...
+2024-04-03 13:04:34.188 [main] DEBUG - Parseando nodos...
+2024-04-03 13:04:34.193 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.194 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.194 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.194 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.194 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.194 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.194 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.194 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.194 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.194 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.194 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.194 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.194 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.194 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.195 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.195 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.195 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.195 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.195 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.195 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.195 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.195 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.195 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.195 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.195 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.195 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.195 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.195 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.196 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.196 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.196 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.196 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.196 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.196 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.196 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.196 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.196 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.196 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.196 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.196 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.196 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.196 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.196 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.197 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.197 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.197 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.197 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.197 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.197 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.197 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.197 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.197 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.197 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.197 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.197 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.197 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.197 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.198 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.198 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.198 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.198 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.198 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.198 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.198 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.198 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.198 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.198 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.198 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.198 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.198 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.198 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.198 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.198 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.199 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.199 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.199 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.199 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.199 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.199 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.199 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.199 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.199 [main] DEBUG - Parseando relaciones...
+2024-04-03 13:04:34.201 [main] DEBUG - Relacion 0: { Origen: VendingMachine; Tipo: DEFAULT; Destinos: [Container , Supplement]}
+2024-04-03 13:04:34.201 [main] DEBUG - Relacion 1: { Origen: Container; Tipo: OR; Destinos: [Beverage , Solid]}
+2024-04-03 13:04:34.201 [main] DEBUG - Relacion 2: { Origen: Beverage; Tipo: OR; Destinos: [Tea , Coffee]}
+2024-04-03 13:04:34.201 [main] DEBUG - Relacion 3: { Origen: Supplement; Tipo: OR; Destinos: [Sugar , Milk]}
+2024-04-03 13:04:34.201 [main] DEBUG - Parseando PCs...
+2024-04-03 13:04:34.201 [main] DEBUG - Presence Condition 0: SolidPC
+2024-04-03 13:04:34.201 [main] DEBUG - Presence Condition 1: CoffeePC
+2024-04-03 13:04:34.201 [main] DEBUG - Presence Condition 2: BeveragePC
+2024-04-03 13:04:34.201 [main] DEBUG - Presence Condition 3: MilkPC
+2024-04-03 13:04:34.201 [main] DEBUG - Presence Condition 4: SugarPC
+2024-04-03 13:04:34.202 [main] DEBUG - Presence Condition 5: TeaPC
+2024-04-03 13:04:34.202 [main] DEBUG - Parseando transiciones...
+2024-04-03 13:04:34.202 [main] DEBUG - Transition 0: { Nombre: SolidPC; PC: t_solid }
+2024-04-03 13:04:34.202 [main] DEBUG - Transition 1: { Nombre: SolidPC; PC: t_solid_end }
+2024-04-03 13:04:34.202 [main] DEBUG - Transition 2: { Nombre: CoffeePC; PC: t_coffee }
+2024-04-03 13:04:34.202 [main] DEBUG - Transition 3: { Nombre: CoffeePC; PC: t_coffee_end }
+2024-04-03 13:04:34.203 [main] DEBUG - Transition 4: { Nombre: CoffeePC; PC: t_milk_no }
+2024-04-03 13:04:34.203 [main] DEBUG - Transition 5: { Nombre: MilkPC; PC: t_milk }
+2024-04-03 13:04:34.203 [main] DEBUG - Transition 6: { Nombre: MilkPC; PC: t_milk_end }
+2024-04-03 13:04:34.203 [main] DEBUG - Transition 7: { Nombre: BeveragePC; PC: t_beverage }
+2024-04-03 13:04:34.203 [main] DEBUG - Transition 8: { Nombre: BeveragePC; PC: t_beverage_end }
+2024-04-03 13:04:34.203 [main] DEBUG - Transition 9: { Nombre: BeveragePC; PC: t_sugar_no }
+2024-04-03 13:04:34.203 [main] DEBUG - Transition 10: { Nombre: SugarPC; PC: t_sugar }
+2024-04-03 13:04:34.203 [main] DEBUG - Transition 11: { Nombre: SugarPC; PC: t_sugar_end }
+2024-04-03 13:04:34.203 [main] DEBUG - Transition 12: { Nombre: TeaPC; PC: t_tea }
+2024-04-03 13:04:34.203 [main] DEBUG - Transition 13: { Nombre: TeaPC; PC: t_tea_end }
+2024-04-03 13:04:34.203 [main] DEBUG - Transition 14: { Nombre: ; PC: t_end }
+2024-04-03 13:04:34.203 [main] DEBUG - Parseando arcos...
+2024-04-03 13:04:34.206 [main] DEBUG - Arc 0: { Nombre: a_solid_in; PC: SolidPC; From  to  }
+2024-04-03 13:04:34.206 [main] DEBUG - Arc 1: { Nombre: a_solid_out; PC: SolidPC; From  to  }
+2024-04-03 13:04:34.206 [main] DEBUG - Arc 2: { Nombre: a_solid_end_in; PC: SolidPC; From  to  }
+2024-04-03 13:04:34.206 [main] DEBUG - Arc 3: { Nombre: a_solid_end_out; PC: SolidPC; From  to  }
+2024-04-03 13:04:34.206 [main] DEBUG - Arc 4: { Nombre: a_beverage_in; PC: BeveragePC; From  to  }
+2024-04-03 13:04:34.206 [main] DEBUG - Arc 5: { Nombre: a_beverage_out; PC: BeveragePC; From  to  }
+2024-04-03 13:04:34.206 [main] DEBUG - Arc 6: { Nombre: a_beverage_end_in; PC: BeveragePC; From  to  }
+2024-04-03 13:04:34.206 [main] DEBUG - Arc 7: { Nombre: a_beverage_end_out; PC: BeveragePC; From  to  }
+2024-04-03 13:04:34.207 [main] DEBUG - Arc 8: { Nombre: a_sugar_no_in; PC: BeveragePC; From  to  }
+2024-04-03 13:04:34.207 [main] DEBUG - Arc 9: { Nombre: a_sugar_no_out; PC: BeveragePC; From  to  }
+2024-04-03 13:04:34.207 [main] DEBUG - Arc 10: { Nombre: a_coffee_in; PC: CoffeePC; From  to  }
+2024-04-03 13:04:34.207 [main] DEBUG - Arc 11: { Nombre: a_coffee_out; PC: CoffeePC; From  to  }
+2024-04-03 13:04:34.207 [main] DEBUG - Arc 12: { Nombre: a_coffee_end_in; PC: CoffeePC; From  to  }
+2024-04-03 13:04:34.207 [main] DEBUG - Arc 13: { Nombre: a_coffee_end_out; PC: CoffeePC; From  to  }
+2024-04-03 13:04:34.207 [main] DEBUG - Arc 14: { Nombre: a_milk_no_in; PC: CoffeePC; From  to  }
+2024-04-03 13:04:34.207 [main] DEBUG - Arc 15: { Nombre: a_milk_no_out; PC: CoffeePC; From  to  }
+2024-04-03 13:04:34.207 [main] DEBUG - Arc 16: { Nombre: a_milk_in; PC: MilkPC; From  to  }
+2024-04-03 13:04:34.207 [main] DEBUG - Arc 17: { Nombre: a_milk_out; PC: MilkPC; From  to  }
+2024-04-03 13:04:34.207 [main] DEBUG - Arc 18: { Nombre: a_milk_end_in; PC: MilkPC; From  to  }
+2024-04-03 13:04:34.208 [main] DEBUG - Arc 19: { Nombre: a_milk_end_out; PC: MilkPC; From  to  }
+2024-04-03 13:04:34.208 [main] DEBUG - Arc 20: { Nombre: a_sugar_in; PC: SugarPC; From  to  }
+2024-04-03 13:04:34.208 [main] DEBUG - Arc 21: { Nombre: a_sugar_out; PC: SugarPC; From  to  }
+2024-04-03 13:04:34.208 [main] DEBUG - Arc 22: { Nombre: a_sugar_end_in; PC: SugarPC; From  to  }
+2024-04-03 13:04:34.208 [main] DEBUG - Arc 23: { Nombre: a_sugar_end_out; PC: SugarPC; From  to  }
+2024-04-03 13:04:34.208 [main] DEBUG - Arc 24: { Nombre: a_tea_in; PC: TeaPC; From  to  }
+2024-04-03 13:04:34.208 [main] DEBUG - Arc 25: { Nombre: a_tea_out; PC: TeaPC; From  to  }
+2024-04-03 13:04:34.208 [main] DEBUG - Arc 26: { Nombre: a_tea_end_in; PC: TeaPC; From  to  }
+2024-04-03 13:04:34.208 [main] DEBUG - Arc 27: { Nombre: a_tea_end_out; PC: TeaPC; From  to  }
+2024-04-03 13:04:34.208 [main] DEBUG - Arc 28: { Nombre: a_end_in; PC: ; From  to  }
+2024-04-03 13:04:34.208 [main] DEBUG - Arc 29: { Nombre: a_end_out; PC: ; From  to  }
+2024-04-03 13:04:34.209 [main] DEBUG - -------------------------------------------------------------------------------------------------------------------
+2024-04-03 13:04:34.214 [main] DEBUG - Parseando modelo 1...
+2024-04-03 13:04:34.214 [main] DEBUG - -------------------------------------------------------------------------------------------------------------------
+2024-04-03 13:04:34.216 [main] DEBUG - Parseando nodos...
+2024-04-03 13:04:34.216 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.216 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.217 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.217 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.217 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.217 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.217 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.217 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.217 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.217 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.217 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.217 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.217 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.217 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.217 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.217 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.217 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.217 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.218 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.219 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.219 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.219 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.219 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.219 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.219 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.219 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.219 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.219 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.219 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.219 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.219 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.220 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.221 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.221 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.221 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.221 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.221 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.221 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.221 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.221 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.221 [main] DEBUG - Nodo 0: { Nombre: VendingMachine}
+2024-04-03 13:04:34.221 [main] DEBUG - Nodo 1: { Nombre: Container}
+2024-04-03 13:04:34.221 [main] DEBUG - Nodo 2: { Nombre: Supplement}
+2024-04-03 13:04:34.221 [main] DEBUG - Nodo 3: { Nombre: Beverage}
+2024-04-03 13:04:34.221 [main] DEBUG - Nodo 4: { Nombre: Solid}
+2024-04-03 13:04:34.221 [main] DEBUG - Nodo 5: { Nombre: Tea}
+2024-04-03 13:04:34.221 [main] DEBUG - Nodo 6: { Nombre: Coffee}
+2024-04-03 13:04:34.221 [main] DEBUG - Nodo 7: { Nombre: Sugar}
+2024-04-03 13:04:34.222 [main] DEBUG - Nodo 8: { Nombre: Milk}
+2024-04-03 13:04:34.222 [main] DEBUG - Parseando relaciones...
+2024-04-03 13:04:34.222 [main] DEBUG - Relacion 0: { Origen: VendingMachine; Tipo: null; Destinos: [Container , Supplement]}
+2024-04-03 13:04:34.222 [main] DEBUG - Relacion 1: { Origen: Container; Tipo: OR; Destinos: [Beverage , Solid]}
+2024-04-03 13:04:34.222 [main] DEBUG - Relacion 2: { Origen: Beverage; Tipo: OR; Destinos: [Tea , Coffee]}
+2024-04-03 13:04:34.222 [main] DEBUG - Relacion 3: { Origen: Supplement; Tipo: OR; Destinos: [Sugar , Milk]}
+2024-04-03 13:04:34.222 [main] DEBUG - Parseando PCs...
+2024-04-03 13:04:34.222 [main] DEBUG - Presence Condition 0: SolidPC
+2024-04-03 13:04:34.222 [main] DEBUG - Presence Condition 1: CoffeePC
+2024-04-03 13:04:34.222 [main] DEBUG - Presence Condition 2: BeveragePC
+2024-04-03 13:04:34.223 [main] DEBUG - Presence Condition 3: MilkPC
+2024-04-03 13:04:34.223 [main] DEBUG - Presence Condition 4: SugarPC
+2024-04-03 13:04:34.223 [main] DEBUG - Presence Condition 5: TeaPC
+2024-04-03 13:04:34.223 [main] DEBUG - Parseando transiciones...
+2024-04-03 13:04:34.223 [main] DEBUG - Transition 0: { Nombre: SolidPC; PC: t_solid }
+2024-04-03 13:04:34.223 [main] DEBUG - Transition 1: { Nombre: SolidPC; PC: t_solid_end }
+2024-04-03 13:04:34.223 [main] DEBUG - Transition 2: { Nombre: CoffeePC; PC: t_coffee }
+2024-04-03 13:04:34.223 [main] DEBUG - Transition 3: { Nombre: CoffeePC; PC: t_coffee_end }
+2024-04-03 13:04:34.223 [main] DEBUG - Transition 4: { Nombre: CoffeePC; PC: t_milk_no }
+2024-04-03 13:04:34.223 [main] DEBUG - Transition 5: { Nombre: MilkPC; PC: t_milk }
+2024-04-03 13:04:34.223 [main] DEBUG - Transition 6: { Nombre: MilkPC; PC: t_milk_end }
+2024-04-03 13:04:34.223 [main] DEBUG - Transition 7: { Nombre: BeveragePC; PC: t_beverage }
+2024-04-03 13:04:34.223 [main] DEBUG - Transition 8: { Nombre: BeveragePC; PC: t_beverage_end }
+2024-04-03 13:04:34.223 [main] DEBUG - Transition 9: { Nombre: BeveragePC; PC: t_sugar_no }
+2024-04-03 13:04:34.223 [main] DEBUG - Transition 10: { Nombre: SugarPC; PC: t_sugar }
+2024-04-03 13:04:34.224 [main] DEBUG - Transition 11: { Nombre: SugarPC; PC: t_sugar_end }
+2024-04-03 13:04:34.224 [main] DEBUG - Transition 12: { Nombre: TeaPC; PC: t_tea }
+2024-04-03 13:04:34.224 [main] DEBUG - Transition 13: { Nombre: TeaPC; PC: t_tea_end }
+2024-04-03 13:04:34.224 [main] DEBUG - Transition 14: { Nombre: ; PC: t_end }
+2024-04-03 13:04:34.224 [main] DEBUG - Parseando arcos...
+2024-04-03 13:04:34.224 [main] DEBUG - Arc 0: { Nombre: a_solid_in; PC: SolidPC; From p_start to t_solid }
+2024-04-03 13:04:34.224 [main] DEBUG - Arc 1: { Nombre: a_solid_out; PC: SolidPC; From t_solid to p_solid }
+2024-04-03 13:04:34.224 [main] DEBUG - Arc 2: { Nombre: a_solid_end_in; PC: SolidPC; From p_solid to t_solid_end }
+2024-04-03 13:04:34.225 [main] DEBUG - Arc 3: { Nombre: a_solid_end_out; PC: SolidPC; From t_solid_end to t_sugar_end }
+2024-04-03 13:04:34.225 [main] DEBUG - Arc 4: { Nombre: a_beverage_in; PC: BeveragePC; From p_start to t_beverage }
+2024-04-03 13:04:34.225 [main] DEBUG - Arc 5: { Nombre: a_beverage_out; PC: BeveragePC; From t_sugar_no to p_beverage }
+2024-04-03 13:04:34.225 [main] DEBUG - Arc 6: { Nombre: a_beverage_end_in; PC: BeveragePC; From p_beverage_end to t_beverage_end }
+2024-04-03 13:04:34.225 [main] DEBUG - Arc 7: { Nombre: a_beverage_end_out; PC: BeveragePC; From t_beverage_end to p_end }
+2024-04-03 13:04:34.225 [main] DEBUG - Arc 8: { Nombre: a_sugar_no_in; PC: BeveragePC; From p_cup to p_beverage }
+2024-04-03 13:04:34.225 [main] DEBUG - Arc 9: { Nombre: a_sugar_no_out; PC: BeveragePC; From t_sugar_no to p_beverage_end }
+2024-04-03 13:04:34.225 [main] DEBUG - Arc 10: { Nombre: a_coffee_in; PC: CoffeePC; From p_beverage to t_coffee }
+2024-04-03 13:04:34.225 [main] DEBUG - Arc 11: { Nombre: a_coffee_out; PC: CoffeePC; From t_coffee to p_coffee }
+2024-04-03 13:04:34.225 [main] DEBUG - Arc 12: { Nombre: a_coffee_end_in; PC: CoffeePC; From p_coffee to t_coffee_end }
+2024-04-03 13:04:34.225 [main] DEBUG - Arc 13: { Nombre: a_coffee_end_out; PC: CoffeePC; From t_coffee_end to p_coffee_end }
+2024-04-03 13:04:34.225 [main] DEBUG - Arc 14: { Nombre: a_milk_no_in; PC: CoffeePC; From p_coffee_end to t_milk_no }
+2024-04-03 13:04:34.225 [main] DEBUG - Arc 15: { Nombre: a_milk_no_out; PC: CoffeePC; From t_milk_no to p_cup }
+2024-04-03 13:04:34.225 [main] DEBUG - Arc 16: { Nombre: a_milk_in; PC: MilkPC; From p_coffee_end to t_milk }
+2024-04-03 13:04:34.225 [main] DEBUG - Arc 17: { Nombre: a_milk_out; PC: MilkPC; From t_milk to p_milk }
+2024-04-03 13:04:34.226 [main] DEBUG - Arc 18: { Nombre: a_milk_end_in; PC: MilkPC; From p_milk to t_milk_end }
+2024-04-03 13:04:34.226 [main] DEBUG - Arc 19: { Nombre: a_milk_end_out; PC: MilkPC; From t_milk_end to p_cup }
+2024-04-03 13:04:34.226 [main] DEBUG - Arc 20: { Nombre: a_sugar_in; PC: SugarPC; From p_cup to t_sugar }
+2024-04-03 13:04:34.226 [main] DEBUG - Arc 21: { Nombre: a_sugar_out; PC: SugarPC; From t_sugar to p_sugar }
+2024-04-03 13:04:34.226 [main] DEBUG - Arc 22: { Nombre: a_sugar_end_in; PC: SugarPC; From p_sugar to t_sugar_end }
+2024-04-03 13:04:34.226 [main] DEBUG - Arc 23: { Nombre: a_sugar_end_out; PC: SugarPC; From t_sugar_end to p_beverage_end }
+2024-04-03 13:04:34.226 [main] DEBUG - Arc 24: { Nombre: a_tea_in; PC: TeaPC; From p_beverage to t_tea }
+2024-04-03 13:04:34.226 [main] DEBUG - Arc 25: { Nombre: a_tea_out; PC: TeaPC; From t_tea to p_tea }
+2024-04-03 13:04:34.226 [main] DEBUG - Arc 26: { Nombre: a_tea_end_in; PC: TeaPC; From p_tea to t_tea_end }
+2024-04-03 13:04:34.226 [main] DEBUG - Arc 27: { Nombre: a_tea_end_out; PC: TeaPC; From t_tea_end to p_cup }
+2024-04-03 13:04:34.226 [main] DEBUG - Arc 28: { Nombre: a_end_in; PC: ; From p_end to t_end }
+2024-04-03 13:04:34.226 [main] DEBUG - Arc 29: { Nombre: a_end_out; PC: ; From t_end to p_start }
+2024-04-03 13:04:34.227 [main] DEBUG - No se han encontrado errores en el metamodelo número 0
+2024-04-03 13:04:34.227 [main] DEBUG - Finalizando la aplicación

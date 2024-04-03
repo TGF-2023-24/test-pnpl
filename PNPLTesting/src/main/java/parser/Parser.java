@@ -139,7 +139,7 @@ public class Parser {
 
     private static List<Transition> parseTransitions(Object elements) {
         List<Transition> list = new ArrayList<>();
-        Utils.LoggerSeguimiento().debug("Parseando places...");
+        Utils.LoggerSeguimiento().debug("Parseando transiciones...");
         try {
 
             for (int i = 0; i < Utils.getSize(elements); i++) {
@@ -169,7 +169,7 @@ public class Parser {
 
     private static List<Arc> parseArc(Object elements) {
         List<Arc> list = new ArrayList<>();
-        Utils.LoggerSeguimiento().debug("Parseando places...");
+        Utils.LoggerSeguimiento().debug("Parseando arcos...");
         try {
 
             for (int i = 0; i < Utils.getSize(elements); i++) {

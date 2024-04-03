@@ -8,5 +8,5 @@ public abstract class Controller {
         return _ctrl;
     }
 
-    public abstract void execute(String jsonPath, String xmiPath);
+    public abstract void execute(String[] paths);
 }

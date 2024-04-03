@@ -1,235 +1,291 @@
 {
-	"PetriNet": {
-		"places":[
+	"pn_150": {
+		"elements":[
 				{
 					"name": "p_start",
-					"id_PC": "invalid"
+					"xsi:type": "Place",
+					"presenceCondition": "invalid"
 				}
 ,				{
 					"name": "p_solid",
-					"id_PC": "SolidPC"
+					"xsi:type": "Place",
+					"presenceCondition": "SolidPC"
 				}
 ,				{
 					"name": "p_coffee",
-					"id_PC": "CoffeePC"
+					"xsi:type": "Place",
+					"presenceCondition": "CoffeePC"
 				}
 ,				{
 					"name": "p_coffee_end",
-					"id_PC": "CoffeePC"
+					"xsi:type": "Place",
+					"presenceCondition": "CoffeePC"
 				}
 ,				{
 					"name": "p_beverage",
-					"id_PC": "BeveragePC"
+					"xsi:type": "Place",
+					"presenceCondition": "BeveragePC"
 				}
 ,				{
 					"name": "p_cup",
-					"id_PC": "BeveragePC"
+					"xsi:type": "Place",
+					"presenceCondition": "BeveragePC"
 				}
 ,				{
 					"name": "p_beverage_end",
-					"id_PC": "BeveragePC"
+					"xsi:type": "Place",
+					"presenceCondition": "BeveragePC"
 				}
 ,				{
 					"name": "p_milk",
-					"id_PC": "MilkPC"
+					"xsi:type": "Place",
+					"presenceCondition": "MilkPC"
 				}
 ,				{
 					"name": "p_sugar",
-					"id_PC": "SugarPC"
+					"xsi:type": "Place",
+					"presenceCondition": "SugarPC"
 				}
 ,				{
 					"name": "p_tea",
-					"id_PC": "TeaPC"
+					"xsi:type": "Place",
+					"presenceCondition": "TeaPC"
 				}
 ,				{
 					"name": "p_end",
-					"id_PC": "invalid"
+					"xsi:type": "Place",
+					"presenceCondition": "invalid"
 				}
 ,				{
 					"name": "t_solid",
-					"id_PC": "SolidPC"
+					"xsi:type": "Transition",
+					"presenceCondition": "SolidPC"
 				}
 ,				{
 					"name": "t_solid_end",
-					"id_PC": "SolidPC"
+					"xsi:type": "Transition",
+					"presenceCondition": "SolidPC"
 				}
 ,				{
 					"name": "t_coffee",
-					"id_PC": "CoffeePC"
+					"xsi:type": "Transition",
+					"presenceCondition": "CoffeePC"
 				}
 ,				{
 					"name": "t_coffee_end",
-					"id_PC": "CoffeePC"
+					"xsi:type": "Transition",
+					"presenceCondition": "CoffeePC"
 				}
 ,				{
 					"name": "t_milk_no",
-					"id_PC": "CoffeePC"
+					"xsi:type": "Transition",
+					"presenceCondition": "CoffeePC"
 				}
 ,				{
 					"name": "t_milk",
-					"id_PC": "MilkPC"
+					"xsi:type": "Transition",
+					"presenceCondition": "MilkPC"
 				}
 ,				{
 					"name": "t_milk_end",
-					"id_PC": "MilkPC"
+					"xsi:type": "Transition",
+					"presenceCondition": "MilkPC"
 				}
 ,				{
 					"name": "t_beverage",
-					"id_PC": "BeveragePC"
+					"xsi:type": "Transition",
+					"presenceCondition": "BeveragePC"
 				}
 ,				{
 					"name": "t_beverage_end",
-					"id_PC": "BeveragePC"
+					"xsi:type": "Transition",
+					"presenceCondition": "BeveragePC"
 				}
 ,				{
 					"name": "t_sugar_no",
-					"id_PC": "BeveragePC"
+					"xsi:type": "Transition",
+					"presenceCondition": "BeveragePC"
 				}
 ,				{
 					"name": "t_sugar",
-					"id_PC": "SugarPC"
+					"xsi:type": "Transition",
+					"presenceCondition": "SugarPC"
 				}
 ,				{
 					"name": "t_sugar_end",
-					"id_PC": "SugarPC"
+					"xsi:type": "Transition",
+					"presenceCondition": "SugarPC"
 				}
 ,				{
 					"name": "t_tea",
-					"id_PC": "TeaPC"
+					"xsi:type": "Transition",
+					"presenceCondition": "TeaPC"
 				}
 ,				{
 					"name": "t_tea_end",
-					"id_PC": "TeaPC"
+					"xsi:type": "Transition",
+					"presenceCondition": "TeaPC"
 				}
 ,				{
 					"name": "t_end",
-					"id_PC": "invalid"
+					"xsi:type": "Transition",
+					"presenceCondition": "invalid"
 				}
 ,				{
 					"name": "a_solid_in",
-					"id_PC": "SolidPC"
+					"xsi:type": "ArcPT",
+					"presenceCondition": "SolidPC"
 				}
 ,				{
 					"name": "a_solid_out",
-					"id_PC": "SolidPC"
+					"xsi:type": "ArcTP",
+					"presenceCondition": "SolidPC"
 				}
 ,				{
 					"name": "a_solid_end_in",
-					"id_PC": "SolidPC"
+					"xsi:type": "ArcPT",
+					"presenceCondition": "SolidPC"
 				}
 ,				{
 					"name": "a_solid_end_out",
-					"id_PC": "SolidPC"
+					"xsi:type": "ArcTP",
+					"presenceCondition": "SolidPC"
 				}
 ,				{
 					"name": "a_beverage_in",
-					"id_PC": "BeveragePC"
+					"xsi:type": "ArcPT",
+					"presenceCondition": "BeveragePC"
 				}
 ,				{
 					"name": "a_beverage_out",
-					"id_PC": "BeveragePC"
+					"xsi:type": "ArcTP",
+					"presenceCondition": "BeveragePC"
 				}
 ,				{
 					"name": "a_beverage_end_in",
-					"id_PC": "BeveragePC"
+					"xsi:type": "ArcPT",
+					"presenceCondition": "BeveragePC"
 				}
 ,				{
 					"name": "a_beverage_end_out",
-					"id_PC": "BeveragePC"
+					"xsi:type": "ArcTP",
+					"presenceCondition": "BeveragePC"
 				}
 ,				{
 					"name": "a_sugar_no_in",
-					"id_PC": "BeveragePC"
+					"xsi:type": "ArcPT",
+					"presenceCondition": "BeveragePC"
 				}
 ,				{
 					"name": "a_sugar_no_out",
-					"id_PC": "BeveragePC"
+					"xsi:type": "ArcTP",
+					"presenceCondition": "BeveragePC"
 				}
 ,				{
 					"name": "a_coffee_in",
-					"id_PC": "CoffeePC"
+					"xsi:type": "ArcPT",
+					"presenceCondition": "CoffeePC"
 				}
 ,				{
 					"name": "a_coffee_out",
-					"id_PC": "CoffeePC"
+					"xsi:type": "ArcTP",
+					"presenceCondition": "CoffeePC"
 				}
 ,				{
 					"name": "a_coffee_end_in",
-					"id_PC": "CoffeePC"
+					"xsi:type": "ArcPT",
+					"presenceCondition": "CoffeePC"
 				}
 ,				{
 					"name": "a_coffee_end_out",
-					"id_PC": "CoffeePC"
+					"xsi:type": "ArcTP",
+					"presenceCondition": "CoffeePC"
 				}
 ,				{
 					"name": "a_milk_no_in",
-					"id_PC": "CoffeePC"
+					"xsi:type": "ArcPT",
+					"presenceCondition": "CoffeePC"
 				}
 ,				{
 					"name": "a_milk_no_out",
-					"id_PC": "CoffeePC"
+					"xsi:type": "ArcTP",
+					"presenceCondition": "CoffeePC"
 				}
 ,				{
 					"name": "a_milk_in",
-					"id_PC": "MilkPC"
+					"xsi:type": "ArcPT",
+					"presenceCondition": "MilkPC"
 				}
 ,				{
 					"name": "a_milk_out",
-					"id_PC": "MilkPC"
+					"xsi:type": "ArcTP",
+					"presenceCondition": "MilkPC"
 				}
 ,				{
 					"name": "a_milk_end_in",
-					"id_PC": "MilkPC"
+					"xsi:type": "ArcPT",
+					"presenceCondition": "MilkPC"
 				}
 ,				{
 					"name": "a_milk_end_out",
-					"id_PC": "MilkPC"
+					"xsi:type": "ArcTP",
+					"presenceCondition": "MilkPC"
 				}
 ,				{
 					"name": "a_sugar_in",
-					"id_PC": "SugarPC"
+					"xsi:type": "ArcPT",
+					"presenceCondition": "SugarPC"
 				}
 ,				{
 					"name": "a_sugar_out",
-					"id_PC": "SugarPC"
+					"xsi:type": "ArcTP",
+					"presenceCondition": "SugarPC"
 				}
 ,				{
 					"name": "a_sugar_end_in",
-					"id_PC": "SugarPC"
+					"xsi:type": "ArcPT",
+					"presenceCondition": "SugarPC"
 				}
 ,				{
 					"name": "a_sugar_end_out",
-					"id_PC": "SugarPC"
+					"xsi:type": "ArcTP",
+					"presenceCondition": "SugarPC"
 				}
 ,				{
 					"name": "a_tea_in",
-					"id_PC": "TeaPC"
+					"xsi:type": "ArcPT",
+					"presenceCondition": "TeaPC"
 				}
 ,				{
 					"name": "a_tea_out",
-					"id_PC": "TeaPC"
+					"xsi:type": "ArcTP",
+					"presenceCondition": "TeaPC"
 				}
 ,				{
 					"name": "a_tea_end_in",
-					"id_PC": "TeaPC"
+					"xsi:type": "ArcPT",
+					"presenceCondition": "TeaPC"
 				}
 ,				{
 					"name": "a_tea_end_out",
-					"id_PC": "TeaPC"
+					"xsi:type": "ArcTP",
+					"presenceCondition": "TeaPC"
 				}
 ,				{
 					"name": "a_end_in",
-					"id_PC": "invalid"
+					"xsi:type": "ArcPT",
+					"presenceCondition": "invalid"
 				}
 ,				{
 					"name": "a_end_out",
-					"id_PC": "invalid"
+					"xsi:type": "ArcTP",
+					"presenceCondition": "invalid"
 				}
 
 		]
 		},
-	"FeatureModel": {
-		"Nodes": [ 
+	"featuremodel": {
+		"nodes": [ 
 				{
 					"name": "VendingMachine",
 					"abstract": false,
@@ -303,42 +359,34 @@
 			
 				}
 		],
-		"Relations": [
+		"relations": [
 				{
 					"parent": "VendingMachine",
 					"type": "DEFAULT",
-					"children": [
-							"Container"
-,							"Supplement"
-					]
+					"children":"Container Supplement"
+					
 				}
 ,				{
 					"parent": "Container",
 					"type": "OR",
-					"children": [
-							"Beverage"
-,							"Solid"
-					]
+					"children":"Beverage Solid"
+					
 				}
 ,				{
 					"parent": "Beverage",
 					"type": "OR",
-					"children": [
-							"Tea"
-,							"Coffee"
-					]
+					"children":"Tea Coffee"
+					
 				}
 ,				{
 					"parent": "Supplement",
 					"type": "OR",
-					"children": [
-							"Sugar"
-,							"Milk"
-					]
+					"children":"Sugar Milk"
+					
 				}
 		]
 	},
-	"PresenceConditions": [ 
+	"presenceconditions": [ 
 			{
 				"id": "SolidPC"
 			}

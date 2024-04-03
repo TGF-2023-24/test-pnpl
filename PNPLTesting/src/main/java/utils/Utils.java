@@ -56,7 +56,9 @@ public class Utils {
     public static Object getAttribute(Object element, String name) {
         if (isJSON(element))  {
             JSONObject obj = (JSONObject) element;
-            return obj.get(name);
+            Object valor = obj.get(name);
+            if (valor == null) valor = ""; //TODO quitar cuando se solucione lo del src y target
+            return valor;
         }
 
         Node childNode = (Node) element;

@@ -284,8 +284,8 @@
 
 		]
 		},
-	"FeatureModel": {
-		"Nodes": [ 
+	"featuremodel": {
+		"nodes": [ 
 				{
 					"name": "VendingMachine",
 					"abstract": false,
@@ -359,7 +359,7 @@
 			
 				}
 		],
-		"Relations": [
+		"relations": [
 				{
 					"parent": "VendingMachine",
 					"type": "DEFAULT",

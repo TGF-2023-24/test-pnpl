@@ -26,6 +26,22 @@ public class PNPL {
         return relations;
     }
 
+    public List<String> getPCs() { 
+        return presenceConditionList;
+    }
+
+    public List<Place> getPlaces() { 
+        return places;
+    }
+
+    public List<Transition> getTransitions() { 
+        return transitions;
+    }
+
+    public List<Arc> getArcs() { 
+        return arcs;
+    }
+
     public static class PNPLBuilder {
         private List<Node> nodes;
         private List<Relation> relations;

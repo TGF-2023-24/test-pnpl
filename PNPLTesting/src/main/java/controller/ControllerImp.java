@@ -9,7 +9,6 @@ import utils.Utils;
 
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,11 +45,23 @@ public class ControllerImp extends Controller {
 
             }
 
+
             for (PNPL metamodelo : list)  {
 
+                Utils.LoggerSeguimiento().debug("Testeando modelo " + list.indexOf(metamodelo)+1 +"...");
                 Tester tester = new Tester(pnpl, metamodelo);
                 List<String> errores = tester.check();
                 if (errores.isEmpty()) Utils.LoggerSeguimiento().debug("No se han encontrado errores en el metamodelo número " + list.indexOf(metamodelo)+1);
+                else {
+                    Utils.LoggerError().debug("Metamodelo " + list.indexOf(metamodelo)+1);
+                    Utils.LoggerSeguimiento().debug("Metamodelo " + list.indexOf(metamodelo)+1);
+                    for (String error : errores) {
+                        Utils.LoggerError().debug(error);
+                        Utils.LoggerSeguimiento().debug(error);
+                    }
+                }
+                Utils.LoggerSeguimiento().debug(Literal.SEPARADOR);
+
             }
         } catch (Exception e) {
             Utils.LoggerError().error(e.getMessage());

@@ -3,12 +3,10 @@ package parser;
 import objects.Arc;
 import objects.Node;
 import objects.PNPL;
-import objects.Place;
 import objects.Relation;
 import objects.Transition;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+
 import utils.Literal;
 import utils.Type;
 import utils.Utils;
@@ -90,12 +88,12 @@ public class Parser {
             return list;
         }
         
-        private static List<String> parseChildren(JSONArray children) {
-        List<String> list = new ArrayList<>();
-        for (Object obj : children)
-            list.add(obj.toString());
-        return list;
-    }
+    //     private static List<String> parseChildren(JSONArray children) {
+    //     List<String> list = new ArrayList<>();
+    //     for (Object obj : children)
+    //         list.add(obj.toString());
+    //     return list;
+    // }
 
     private static List<String> parseRequirements(List<String> words, List<Node> existingNodes) {
         List<String> list = new ArrayList<>();

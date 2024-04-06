@@ -16,7 +16,7 @@ public class Place {
         return "{ Nombre: " +name + "}";
     }
     public static class PlaceBuilder {
-        private String name, pc, source, target, type;
+        private String name, pc;
 
         public PlaceBuilder(String name) {
             this.name = name;

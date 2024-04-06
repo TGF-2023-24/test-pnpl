@@ -10,12 +10,13 @@ public class PNPL {
     List<Transition> transitions;
     List<Arc> arcs;
 
-    private PNPL(List<Node> nodes, List<Relation> relations, List<String> pcList, List<Transition> transitions, List<Arc> arcs) {
+    private PNPL(List<Node> nodes, List<Relation> relations, List<String> pcList, List<Transition> transitions, List<Arc> arcs, List<Place> places) {
         this.nodes = nodes;
         this.relations = relations;
         this.presenceConditionList = pcList;
         this.transitions = transitions;
         this.arcs = arcs;
+        this.places = places;
     }
 
     public List<Node> getNodes() {
@@ -80,7 +81,7 @@ public class PNPL {
             return this;
         }
         public PNPL build() {
-            return new PNPL(nodes, relations, presenceConditionList, transitions, arcs);
+            return new PNPL(nodes, relations, presenceConditionList, transitions, arcs, places);
         }
     }
 }

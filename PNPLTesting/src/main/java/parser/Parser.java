@@ -3,10 +3,13 @@ package parser;
 import objects.Arc;
 import objects.Node;
 import objects.PNPL;
+import objects.Place;
 import objects.Relation;
 import objects.Transition;
-
-
+import objects.metamodel.ArcType;
+import objects.metamodel.Metamodel;
+import objects.metamodel.ArcType.ArcTypeBuilder;
+import objects.metamodel.Metamodel.MetamodelBuilder;
 import utils.Literal;
 import utils.Type;
 import utils.Utils;
@@ -16,7 +19,57 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
 public class Parser {
+
+    public static Metamodel parseMetamodel(Document file) {
+        MetamodelBuilder metamodelBuild = new MetamodelBuilder();    
+
+        return metamodelBuild
+            .arcTypes(parseArcTypes(file))
+            .build();
+    }
+
+    public static List<ArcType> parseArcTypes(Document file) {
+        List<ArcType> list = new ArrayList<>();
+
+        XPath xPath = XPathFactory.newInstance().newXPath();
+        try {
+            XPathExpression xPathExpr = xPath.compile("//eClassifiers[@name='ArcPT' or @name='ArcTP']");
+            NodeList nodeList = (NodeList) xPathExpr.evaluate(file, XPathConstants.NODESET);           
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                org.w3c.dom.Node node = nodeList.item(i);
+                if (node.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
+                    Element element = (Element) node;
+                    NodeList childNodes = element.getChildNodes();
+                    ArcTypeBuilder arcBuild = new ArcTypeBuilder(element.getAttribute("name"));
+                    for (int j = 0; j < childNodes.getLength(); j++) {
+                        org.w3c.dom.Node childNode = childNodes.item(j);
+                        if (childNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
+                            Element childElement = (Element) childNode;
+                            if (childElement.getAttribute("name").equals("source"))
+                                arcBuild = arcBuild.src(childElement.getAttribute("eType").substring(3));
+                            else if (childElement.getAttribute("name").equals("target"))
+                                arcBuild = arcBuild.target(childElement.getAttribute("eType").substring(3));
+                        }
+                    }
+                    list.add(arcBuild.build());
+                }
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
 
     public static PNPL parse(Object file) {
         Utils.LoggerSeguimiento().trace("Parseando...");
@@ -34,6 +87,7 @@ public class Parser {
                 .relations(parseRelations(relations))
                 .presenceCondition(parsePresenceCondition(presenceConditions))
                 .transitions(parseTransitions(elements))
+                .places(parsePlaces(elements))
                 .arcs(parseArc(elements))
                 .build();
 
@@ -152,12 +206,31 @@ public class Parser {
                     Utils.LoggerSeguimiento().debug("Transition " + list.indexOf(transition)+": " + transition.toString());
                 }
 
-                // Place p = new Place.PlaceBuilder(Utils.getAttribute(place, "name").toString())
-                // .presenceCondition(Utils.getAttribute(place, "id").toString())
-                // .build();
-                // list.add(p);
-                // Utils.LoggerSeguimiento().debug("Place " + list.indexOf(p)+": " + p.toString());
+                
 
+            }
+        } catch(Exception e) {
+            Utils.LoggerError().error("Error al parsear las transiciones: " + e.getMessage());
+        }
+            return list;
+    }
+
+    private static List<Place> parsePlaces(Object elements) {
+        List<Place> list = new ArrayList<>();
+        Utils.LoggerSeguimiento().debug("Parseando places...");
+        try {
+
+            for (int i = 0; i < Utils.getSize(elements); i++) {
+                Object element = Utils.getElement(elements, i);
+                String type = Utils.getAttribute(element, "xsi:type").toString();
+
+                if (type.contains("Place")) {
+                    Place place = new Place.PlaceBuilder(Utils.getAttribute(element, "name").toString())
+                    .presenceCondition(Utils.getAttribute(element, "id").toString())
+                    .build();
+                    list.add(place);
+                    Utils.LoggerSeguimiento().debug("Place " + list.indexOf(place)+": " + place.toString());
+                }
             }
         } catch(Exception e) {
             Utils.LoggerError().error("Error al parsear las transiciones: " + e.getMessage());
@@ -175,9 +248,10 @@ public class Parser {
                 String type = Utils.getAttribute(element, "xsi:type").toString();
 
                 if (type.contains("Arc")) {
+                    String typeFull = Utils.getAttribute(element, "xsi:type").toString();
                     Arc arco = new Arc.ArcBuilder(Utils.getAttribute(element, "name").toString())
                     .presenceCondition(Utils.getAttribute(element, "presenceCondition").toString())
-                    .type(Utils.getAttribute(element, "xsi:type").toString())
+                    .type(typeFull.substring(typeFull.indexOf(":")+1))
                     .source(Utils.getAttribute(element, "source").toString())
                     .target(Utils.getAttribute(element, "target").toString())
                     .build();

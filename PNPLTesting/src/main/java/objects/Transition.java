@@ -28,7 +28,7 @@ public class Transition {
         }
         
         public Transition build() {
-            return new Transition(name,pc);
+            return new Transition(pc,name);
         }
     }
     

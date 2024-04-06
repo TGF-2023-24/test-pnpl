@@ -16,7 +16,7 @@
             "request": "launch",
             "mainClass": "main.Main",
             "projectName": "PNPLModelTesting",
-            "args": ["/input/datos.json", "/input/pnplExample.xmi"]
+            "args": ["/input/pnpl.ecore", "/input/pnplExample.xmi"]
         }
     ]
 }

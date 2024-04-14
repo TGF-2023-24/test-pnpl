@@ -1,14 +1,21 @@
 package utils;
 
 
+import javax.xml.XMLConstants;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import java.io.File;
+import java.io.FileReader;
 
 
 public class Utils {
@@ -20,6 +27,23 @@ public class Utils {
 
     private static boolean isJSON(Object file) {
         return file instanceof JSONObject || file instanceof JSONArray;
+    }
+
+    public static Object initialize(Object type) {
+        try {
+
+            String name = (String) type;
+            if (name.endsWith("json"))  {
+                JSONParser Jsonparser = new JSONParser();
+                return (JSONObject) Jsonparser.parse(new FileReader(name));
+            }
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            Document doc = db.parse(new File(name));
+            doc.getDocumentElement().normalize();
+            return doc;
+        } catch(Exception e) { return null;}
     }
 
     public static Object getList(Object element, String name) {

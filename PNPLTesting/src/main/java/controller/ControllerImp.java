@@ -5,8 +5,11 @@ import objects.metamodel.Metamodel;
 import parser.Parser;
 import utils.Literal;
 import utils.Utils;
+import view.Viewer;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import org.w3c.dom.Document;
 
 
@@ -37,7 +40,11 @@ public class ControllerImp extends Controller {
                 Utils.LoggerSeguimiento().debug("Testeando modelo " + list.indexOf(modelo)+1 +"...");
                 Tester tester = new Tester(metamodel, modelo); 
                 List<String> errores = tester.check(); //Validamos los modelos en base al metamodelo
-                if (errores.isEmpty()) Utils.LoggerSeguimiento().debug("No se han encontrado errores en el metamodelo número " + list.indexOf(modelo)+1);
+                if (errores.isEmpty()) {
+                    Utils.LoggerSeguimiento().debug("No se han encontrado errores en el metamodelo número " + list.indexOf(modelo)+1);
+                    Viewer view = new Viewer();
+                    view.run();
+                }
                 else { //Si hay errores, se muestran
                     Utils.LoggerError().debug("Metamodelo " + list.indexOf(modelo)+1);
                     Utils.LoggerSeguimiento().debug("Metamodelo " + list.indexOf(modelo)+1);

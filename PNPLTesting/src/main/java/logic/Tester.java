@@ -38,7 +38,7 @@ public class Tester {
         List<String> errores = new ArrayList<>();
 
         for (Transition transition : modelo.getTransitions()) {
-            if (!modelo.getPCs().contains(transition.getPresenceCondition()))
+            if (!modelo.getPCs().contains(transition.getPresenceCondition()) && !transition.getPresenceCondition().isEmpty())
                 errores.add("Presence Condition " + transition.getPresenceCondition() + " en transición " + transition.getName() + " no encontrada");
         }
 
@@ -79,11 +79,11 @@ public class Tester {
            if (!nodeHM.containsKey(relation.getParent()))
                 errores.add("Relacion con nodo antecesor " + relation.getParent() + " no encontrado");    
             for (String child : relation.getChildren()) {
-                if (!nodeHM.containsKey(child))
+                if (!nodeHM.containsKey(child.trim()))
                     errores.add("Relacion con nodo sucesor " + child + " no encontrado");    
             }   
             
-            if (!metamodelo.getTypes().contains(relation.getType()))
+            if (!metamodelo.getTypes().contains(relation.getType()) && !relation.getType().isEmpty())
                 errores.add("Tipo " + relation.getType() + " en la relacion " + relation.getId() + " no encontrado");    
 
         }
@@ -106,12 +106,17 @@ public class Tester {
         }
 
         for (Arc arco : modelo.getArcs()) {
-            if (!modelo.getPCs().contains(arco.getPresenceCondition()))
+            if (!modelo.getPCs().contains(arco.getPresenceCondition()) && !arco.getPresenceCondition().isEmpty())
                 errores.add("Presence Condition " + arco.getPresenceCondition() + " en arco " + arco.getName() + " no encontrada");
             if (!placeHM.containsKey(arco.getSource()) && !transitionHM.containsKey(arco.getSource())) 
-                errores.add("Elemento no encontrado");
-            if (!placeHM.containsKey(arco.getTarget()) && !transitionHM.containsKey(arco.getTarget())) 
-                errores.add("Elemento no encontrado");
+                errores.add("Elemento origen " + arco.getSource() + " no encontrado en el arco " + arco.getName());
+            else if (arco.getSource().isEmpty())
+                errores.add("El origen del arco " + arco.getName() + " no puede ser vacío");
+            if (!placeHM.containsKey(arco.getTarget()) && !transitionHM.containsKey(arco.getTarget()) && !arco.getTarget().isEmpty()) 
+                errores.add("Elemento destino " + arco.getTarget() + " no encontrado en el arco " + arco.getName());
+            else if (arco.getTarget().isEmpty())
+                errores.add("El destino del arco " + arco.getName() + " no puede ser vacío");
+
             for (ArcType type : metamodelo.getArcTypes()) {
                 if (type.getName().equals(arco.getType())) {
                     if (type.getSource() == "Transition" && !transitionHM.containsKey(arco.getSource()) && placeHM.containsKey(arco.getSource())) 

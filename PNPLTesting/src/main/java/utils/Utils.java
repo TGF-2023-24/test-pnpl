@@ -55,6 +55,7 @@ public class Utils {
 
             Document doc = (Document) element;
             Node array = doc.getElementsByTagName(name).item(0);
+            if (array == null) return doc.getElementsByTagName(name);
             return array;
         } catch(Exception e) {
             NodeList nodesList = ((Element) element).getElementsByTagName(name);

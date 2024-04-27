@@ -34,10 +34,11 @@ public class Parser {
 
         return metamodelBuild
             .arcTypes(parseArcTypes(file))
+            .types(parseMetamodelTypes(file))
             .build();
     }   
 
-    public static List<ArcType> parseArcTypes(Document file) {
+    private static List<ArcType> parseArcTypes(Document file) {
         List<ArcType> list = new ArrayList<>();
 
         XPath xPath = XPathFactory.newInstance().newXPath();
@@ -68,6 +69,26 @@ public class Parser {
         }
 
         return list;
+    }
+
+    private static List<String> parseMetamodelTypes(Document file) {
+        List<String> types = new ArrayList<>();
+
+        Object eClassifierNodes = (NodeList) Utils.getListComplete(file, "eClassifiers");
+        for (int i = 0; i < Utils.getSize(eClassifierNodes); i++) {
+            Object eClassifierElement = Utils.getElement(eClassifierNodes, i);
+            String name = Utils.getAttribute(eClassifierElement, "xsi:type").toString().toLowerCase();
+            if (name.contains("eenum"))
+            {
+                for (int j = 0; j < Utils.getSize(eClassifierElement); j++) {
+                    Object ele = Utils.getElement(eClassifierElement, j);
+                    Object attribute = Utils.getAttribute(ele, "name");
+                    if (attribute != null) types.add(attribute.toString());
+                }
+            }
+            
+        }
+        return types;
     }
 
     public static PNPL parse(Object file) {
@@ -246,7 +267,12 @@ public class Parser {
                     .build();
                     list.add(arco);
                     Utils.LoggerSeguimiento().debug("Arc " + list.indexOf(arco)+": " + arco.toString());
+                    if (Utils.getAttribute(element, "source").toString() == "") {
+                        Utils.LoggerError().error("Error al parsear los arcos: " + i);
+                        
+                    }
                 }
+                
 
             }
         } catch(Exception e) {

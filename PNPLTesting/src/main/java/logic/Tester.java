@@ -81,7 +81,10 @@ public class Tester {
             for (String child : relation.getChildren()) {
                 if (!nodeHM.containsKey(child))
                     errores.add("Relacion con nodo sucesor " + child + " no encontrado");    
-            }    
+            }   
+            
+            if (!metamodelo.getTypes().contains(relation.getType()))
+                errores.add("Tipo " + relation.getType() + " en la relacion " + relation.getId() + " no encontrado");    
 
         }
 

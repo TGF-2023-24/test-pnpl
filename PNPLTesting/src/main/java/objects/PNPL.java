@@ -5,10 +5,10 @@ import java.util.List;
 public class PNPL {
     private List<Node> nodes;
     private List<Relation> relations;
-    List<String> presenceConditionList;
-    List<Place> places;
-    List<Transition> transitions;
-    List<Arc> arcs;
+    private List<String> presenceConditionList;
+    private List<Place> places;
+    private List<Transition> transitions;
+    private List<Arc> arcs;
 
     private PNPL(List<Node> nodes, List<Relation> relations, List<String> pcList, List<Transition> transitions, List<Arc> arcs, List<Place> places) {
         this.nodes = nodes;

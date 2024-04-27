@@ -2,17 +2,16 @@ package objects;
 
 
 import org.graphwalker.core.model.Edge;
-import utils.Type;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Relation extends Edge {
     private String parentNode;
-    private Type type;
+    private String type;
     private List<String> children;
 
-    private Relation(String parent, Type t, List<String> children) {
+    private Relation(String parent, String t, List<String> children) {
         parentNode = parent;
         type = t;
         this.children = children;
@@ -22,7 +21,7 @@ public class Relation extends Edge {
         return parentNode;
     }
 
-    public Type getType() {
+    public String getType() {
         return type;
     }
 
@@ -36,14 +35,14 @@ public class Relation extends Edge {
     }
     public static class RelationBuilder {
         private String parentNode;
-        private Type type;
+        private String type;
         private List<String> children;
 
         public RelationBuilder(String parent) {
             parentNode = parent;
             children = new ArrayList<>();
         }
-        public RelationBuilder type(Type type) {
+        public RelationBuilder type(String type) {
             this.type = type;
             return this;
         }

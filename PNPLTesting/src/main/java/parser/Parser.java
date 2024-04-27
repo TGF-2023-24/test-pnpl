@@ -11,7 +11,6 @@ import objects.metamodel.Metamodel;
 import objects.metamodel.ArcType.ArcTypeBuilder;
 import objects.metamodel.Metamodel.MetamodelBuilder;
 import utils.Literal;
-import utils.Type;
 import utils.Utils;
 
 import java.util.ArrayList;
@@ -36,7 +35,7 @@ public class Parser {
         return metamodelBuild
             .arcTypes(parseArcTypes(file))
             .build();
-    }
+    }   
 
     public static List<ArcType> parseArcTypes(Document file) {
         List<ArcType> list = new ArrayList<>();
@@ -90,8 +89,6 @@ public class Parser {
                 .places(parsePlaces(elements))
                 .arcs(parseArc(elements))
                 .build();
-
-
     }
 
     private static List<Node> parseNodes(Object nodes) {
@@ -131,7 +128,7 @@ public class Parser {
                 if (aux_list == "") aux_list = Utils.getAttribute(relation, "childs");
                 Relation relacion = new Relation.RelationBuilder(Utils.getAttribute(relation,"parent").toString())
                 .children(Arrays.stream(aux_list.toString().split("(?=[A-Z])")).toList())
-                .type(parseType(Utils.getAttribute(relation,"type").toString()))
+                .type(Utils.getAttribute(relation,"type").toString())
                 .build();
                 list.add(relacion);
                 Utils.LoggerSeguimiento().debug("Relacion " + list.indexOf(relacion)+": " + relacion.toString());
@@ -163,14 +160,6 @@ public class Parser {
             }
         }
         return list;
-    }
-
-    private static Type parseType(String typeToSearch) {
-        for (Type type : Type.values()) {
-            if (type.toString().equals(typeToSearch))
-                return type;
-        }
-        return null;
     }
 
     private static List<String> parsePresenceCondition(Object presenceConditions) {

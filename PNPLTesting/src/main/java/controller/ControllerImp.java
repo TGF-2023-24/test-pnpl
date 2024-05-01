@@ -42,7 +42,7 @@ public class ControllerImp extends Controller {
                 List<String> errores = tester.check(); //Validamos los modelos en base al metamodelo
                 if (errores.isEmpty()) {
                     Utils.LoggerSeguimiento().debug("No se han encontrado errores en el metamodelo número " + list.indexOf(modelo)+1);
-                    Viewer view = new Viewer();
+                    Viewer view = new Viewer(modelo);
                     view.run();
                 }
                 else { //Si hay errores, se muestran

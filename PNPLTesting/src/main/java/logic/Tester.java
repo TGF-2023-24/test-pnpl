@@ -30,6 +30,7 @@ public class Tester {
         errores.addAll(checkNodes());
         errores.addAll(checkRelations());
         errores.addAll(checkArcs());
+        errores.addAll(checkElements());
 
         return errores;
     }
@@ -134,5 +135,24 @@ public class Tester {
 
         return errores;
     }
-    
+    private List<String> checkElements() {
+        List<String> errores = new ArrayList<>();
+
+        HashMap<String, Place> placeHM = new HashMap<>();
+        for (Place place : modelo.getPlaces()) {
+            if (!placeHM.containsKey(place.getName())) placeHM.put(place.getName(), place);
+        }
+
+        HashMap<String, Transition> transitionHM = new HashMap<>();
+        for (Transition transition : modelo.getTransitions()) {
+            if (!transitionHM.containsKey(transition.getName())) transitionHM.put(transition.getName(), transition);
+        }
+
+        for (String element : modelo.getElements()) {
+            if (!placeHM.containsKey(element) && !transitionHM.containsKey(element))
+                errores.add("Elemento " + element + " no tiene un tipo específico asignado");
+        }
+
+        return errores;
+    }
 }

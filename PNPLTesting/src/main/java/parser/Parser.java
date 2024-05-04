@@ -109,6 +109,7 @@ public class Parser {
                 .transitions(parseTransitions(elements))
                 .places(parsePlaces(elements))
                 .arcs(parseArc(elements))
+                .elements(parseElements(elements))
                 .build();
     }
 
@@ -277,6 +278,27 @@ public class Parser {
             }
         } catch(Exception e) {
             Utils.LoggerError().error("Error al parsear los arcos: " + e.getMessage());
+        }
+            return list;
+    }
+
+    private static List<String> parseElements(Object elements) {
+        List<String> list = new ArrayList<>();
+        Utils.LoggerSeguimiento().debug("Parseando elementos...");
+        try {
+
+            for (int i = 0; i < Utils.getSize(elements); i++) {
+                Object element = Utils.getElement(elements, i);
+                String type = Utils.getAttribute(element, "xsi:type").toString();
+                
+                if (!type.contains("ArcTP") && !type.contains("ArcPT")) {
+                    String nombre = Utils.getAttribute(element, "name").toString();
+                    list.add(nombre);
+                    Utils.LoggerSeguimiento().debug("Elemento " + list.indexOf(nombre)+": " + nombre);
+                }
+            }
+        } catch(Exception e) {
+            Utils.LoggerError().error("Error al parsear las transiciones: " + e.getMessage());
         }
             return list;
     }

@@ -14,9 +14,16 @@ public class Viewer {
 	"node {" +
 		"fill-mode: gradient-horizontal;"+
 		"fill-color: yellow;"+
-		"text-alignment: above;"+
-		"text-offset: 20px;"+
-		"size: 15px;"+
+		// "text-background-mode: rounded-box;"+
+		// "text-background-color: black;"+
+		// "text-color: white;"+
+		"text-style: italic;"+
+		"text-alignment: under;"+
+		"size: 18px;"+
+		"shape: circle;"+
+		"fill-color: #8facb4;"+
+		"stroke-mode: plain;"+
+		"stroke-color: black;"+
 	"}" +
 
 	"node.place {" +
@@ -29,6 +36,10 @@ public class Viewer {
 
 	"node.arc {" +
 	"	fill-color: green;" +
+	"size: 11px;"+
+	"}" +
+	" edge {" +
+	"size:2px;" +
 	"}"
 	;
 
@@ -38,7 +49,7 @@ public class Viewer {
     public void run() {
         System.setProperty("org.graphstream.ui", "swing");
 		
-		Graph graph = new SingleGraph("Modelo");
+		Graph graph = new MultiGraph("Modelo");
 
 		graph.setAttribute("ui.quality");
 		graph.setAttribute("ui.antialias");
@@ -57,19 +68,29 @@ public class Viewer {
 			Node n = graph.getNode(transition.getName());
 			n.setAttribute("ui.label", n.getId());
 			n.setAttribute("ui.class", "transition");
+
 		}
 
+		// OPCION 1: MOSTRANDO ARCOS
 		for (Arc arco : modelo.getArcs()) {
 			graph.addNode(arco.getName());
 			Node n = graph.getNode(arco.getName());
 			n.setAttribute("ui.label", n.getId());
-			n.setAttribute("ui.class", "arc");
+			n.setAttribute("ui.class", "arc");		
 		}
-
 		for (Arc arco : modelo.getArcs()) {
 			graph.addEdge(arco.getName()+"edge1", arco.getSource(), arco.getName(),true);
 			graph.addEdge(arco.getName()+"edge2", arco.getName(), arco.getTarget(),true);
+
 		}
+
+
+		//OPCION 2: SIN MOSTRAR ARCOS
+		// for (Arc arco : modelo.getArcs()) {
+		// 	graph.addEdge(arco.getName(), arco.getSource(), arco.getTarget(),true);
+		// 	Edge n = graph.getEdge(arco.getName());
+		// 	n.setAttribute("ui.class", "arc");
+		// }
 
 
 		graph.setAttribute("ui.stylesheet", styleSheet);

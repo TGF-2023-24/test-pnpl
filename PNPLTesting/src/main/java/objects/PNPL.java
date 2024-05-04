@@ -9,14 +9,16 @@ public class PNPL {
     private List<Place> places;
     private List<Transition> transitions;
     private List<Arc> arcs;
+    private List<String> elements;
 
-    private PNPL(List<Node> nodes, List<Relation> relations, List<String> pcList, List<Transition> transitions, List<Arc> arcs, List<Place> places) {
+    private PNPL(List<Node> nodes, List<Relation> relations, List<String> pcList, List<Transition> transitions, List<Arc> arcs, List<Place> places, List<String> elements) {
         this.nodes = nodes;
         this.relations = relations;
         this.presenceConditionList = pcList;
         this.transitions = transitions;
         this.arcs = arcs;
         this.places = places;
+        this.elements = elements;
     }
 
     public List<Node> getNodes() {
@@ -29,6 +31,10 @@ public class PNPL {
 
     public List<String> getPCs() { 
         return presenceConditionList;
+    }
+
+    public List<String> getElements() { 
+        return elements;
     }
 
     public List<Place> getPlaces() { 
@@ -46,10 +52,12 @@ public class PNPL {
     public static class PNPLBuilder {
         private List<Node> nodes;
         private List<Relation> relations;
-        List<String> presenceConditionList;
-        List<Place> places;
-        List<Transition> transitions;
-        List<Arc> arcs;
+        private List<String> presenceConditionList;
+        private List<Place> places;
+        private List<Transition> transitions;
+        private List<Arc> arcs;
+        private List<String> elements;
+
         public PNPLBuilder nodes(List<Node> nodes) {
             if (nodes == null) nodes = new ArrayList<>();
             this.nodes = nodes;
@@ -80,8 +88,13 @@ public class PNPL {
             this.arcs = arcs;
             return this;
         }
+        public PNPLBuilder elements(List<String> elements) {
+            if (elements == null) elements = new ArrayList<>();
+            this.elements = elements;
+            return this;
+        }
         public PNPL build() {
-            return new PNPL(nodes, relations, presenceConditionList, transitions, arcs, places);
+            return new PNPL(nodes, relations, presenceConditionList, transitions, arcs, places, elements);
         }
     }
 }

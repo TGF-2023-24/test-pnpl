@@ -2,7 +2,6 @@ package view;
 import org.graphstream.graph.*;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.MultiGraph;
-import org.graphstream.graph.implementations.SingleGraph;
 
 import objects.*;
 
@@ -72,37 +71,28 @@ public class Viewer {
 		}
 
 		// OPCION 1: MOSTRANDO ARCOS
-		for (Arc arco : modelo.getArcs()) {
-			graph.addNode(arco.getName());
-			Node n = graph.getNode(arco.getName());
-			n.setAttribute("ui.label", n.getId());
-			n.setAttribute("ui.class", "arc");		
-		}
-		for (Arc arco : modelo.getArcs()) {
-			graph.addEdge(arco.getName()+"edge1", arco.getSource(), arco.getName(),true);
-			graph.addEdge(arco.getName()+"edge2", arco.getName(), arco.getTarget(),true);
+		// for (Arc arco : modelo.getArcs()) {
+		// 	graph.addNode(arco.getName());
+		// 	Node n = graph.getNode(arco.getName());
+		// 	n.setAttribute("ui.label", n.getId());
+		// 	n.setAttribute("ui.class", "arc");		
+		// }
+		// for (Arc arco : modelo.getArcs()) {
+		// 	graph.addEdge(arco.getName()+"edge1", arco.getSource(), arco.getName(),true);
+		// 	graph.addEdge(arco.getName()+"edge2", arco.getName(), arco.getTarget(),true);
 
-		}
+		// }
 
 
 		//OPCION 2: SIN MOSTRAR ARCOS
-		// for (Arc arco : modelo.getArcs()) {
-		// 	graph.addEdge(arco.getName(), arco.getSource(), arco.getTarget(),true);
-		// 	Edge n = graph.getEdge(arco.getName());
-		// 	n.setAttribute("ui.class", "arc");
-		// }
+		 for (Arc arco : modelo.getArcs()) {
+		 	graph.addEdge(arco.getName(), arco.getSource(), arco.getTarget(),true);
+		 	Edge n = graph.getEdge(arco.getName());
+		 	n.setAttribute("ui.class", "arc");
+		 }
 
 
 		graph.setAttribute("ui.stylesheet", styleSheet);
-
-		// int i = 0;
-		// for (Node node : graph) {
-		// 	node.setAttribute("ui.label", node.getId());
-		// 	if (i % 2 == 0)
-		// 		node.setAttribute("ui.class", "marked");
-		// 	i++;
-
-		// }
 
 
 		graph.display();

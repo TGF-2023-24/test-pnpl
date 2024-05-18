@@ -25,7 +25,8 @@
             "projectName": "PNPLModelTesting",
             "args": [
                 "/input/pnpl.ecore",
-                "/input/pnplExample.xmi"
+                //"/input/pnplExample.xmi",
+                "/input/pnplExampleError.xmi"
             ]
         }
     ]

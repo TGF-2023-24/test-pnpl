@@ -19,11 +19,16 @@ import java.io.FileReader;
 
 
 public class Utils {
-    private static final Logger seguimiento = LogManager.getLogger("seguimiento");
-    private static final Logger errores = LogManager.getLogger("errores");
+    private static Logger seguimiento;
+    private static Logger errores;
 
-    public static Logger LoggerSeguimiento() { return seguimiento; }
-    public static Logger LoggerError() { return errores; }
+    public static Logger LoggerSeguimiento() { 
+        if (seguimiento == null) seguimiento = LogManager.getLogger("seguimiento");
+        return seguimiento; 
+    }
+    public static Logger LoggerError() { 
+        if (errores == null) errores = LogManager.getLogger("errores");
+        return errores; }
 
     private static boolean isJSON(Object file) {
         return file instanceof JSONObject || file instanceof JSONArray;

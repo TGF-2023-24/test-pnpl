@@ -122,12 +122,11 @@ public class Parser {
                 Node n = new Node.NodeBuilder((String)Utils.getAttribute(node, "name"))
                 .isAbstract(Utils.getBooleanAttribute(node, "abstract"))
                 .isMandatory(Utils.getBooleanAttribute(node, "mandatory"))
-                .requirments(Arrays.stream(Utils.getAttribute(node, "requires").toString().split("(?=[A-Z])")).toList())
-                .excludes(Arrays.stream(Utils.getAttribute(node, "excludes").toString().split("(?=[A-Z])")).toList())
+                .requirments(Arrays.stream(Utils.getAttribute(node, "requires").toString().split(" ")).toList())
+                .excludes(Arrays.stream(Utils.getAttribute(node, "excludes").toString().split(" ")).toList())
                 .build();
                 list.add(n);
             }
-            for (int i = 0; i < Utils.getSize(nodes); i++)
             for (Node nodo : list) {
                 nodo.setNodeRequirements(parseRequirements(nodo.getNodeRequirements(), list));
                 nodo.setExcludes(parseRequirements(nodo.getExcludes(), list));
@@ -173,13 +172,14 @@ public class Parser {
         HashSet<String> added_nodes = new HashSet<>();
         for (String word : words) {
             if (word.equals(Literal.VALOR_VACIO)) continue;
-            for (Node node : existingNodes) {
-                if (node.getName().contains(word) && !added_nodes.contains(node.getName())) {
-                    list.add(node.getName());
-                    added_nodes.add(node.getName());
-                }
+            // for (Node node : existingNodes) {
+            //     if (node.getName().contains(word) && !added_nodes.contains(node.getName())) {
+            //         list.add(node.getName());
+            //         added_nodes.add(node.getName());
+            //     }
 
-            }
+            // }
+            list.add(word);
         }
         return list;
     }
